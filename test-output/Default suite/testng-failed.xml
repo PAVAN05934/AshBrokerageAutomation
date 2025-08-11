@@ -5,7 +5,7 @@
     <classes>
       <class name="AshBrokerage.test.LoginPage_test_scenario">
         <methods>
-          <include name="tearDown"/>
+          <include name="client_create"/>
           <include name="setup"/>
           <include name="loginFlow"/>
         </methods>

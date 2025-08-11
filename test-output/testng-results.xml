@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-29T14:01:48 IST" name="Default suite" finished-at="2025-07-29T14:02:09 IST" duration-ms="20384">
+  <suite started-at="2025-08-11T16:51:32 IST" name="Default suite" finished-at="2025-08-11T16:52:01 IST" duration-ms="28822">
     <groups>
     </groups>
-    <test started-at="2025-07-29T14:01:48 IST" name="Default test" finished-at="2025-07-29T14:02:09 IST" duration-ms="20384">
+    <test started-at="2025-08-11T16:51:32 IST" name="Default test" finished-at="2025-08-11T16:52:01 IST" duration-ms="28822">
       <class name="AshBrokerage.test.LoginPage_test_scenario">
-        <test-method is-config="true" signature="setup()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-07-29T14:01:39 IST" name="setup" finished-at="2025-07-29T14:01:48 IST" duration-ms="9557" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-08-11T16:51:27 IST" name="setup" finished-at="2025-08-11T16:51:32 IST" duration-ms="4844" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginFlow()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-07-29T14:01:48 IST" name="loginFlow" finished-at="2025-07-29T14:01:59 IST" duration-ms="10325" status="PASS">
+        <test-method signature="loginFlow()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-08-11T16:51:32 IST" name="loginFlow" finished-at="2025-08-11T16:51:42 IST" duration-ms="9650" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginFlow -->
-        <test-method signature="dfsdf()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-07-29T14:01:59 IST" name="dfsdf" finished-at="2025-07-29T14:02:09 IST" depends-on-methods="AshBrokerage.test.LoginPage_test_scenario.loginFlow" duration-ms="10009" status="PASS">
+        <test-method signature="client_create()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-08-11T16:51:42 IST" name="client_create" finished-at="2025-08-11T16:51:56 IST" depends-on-methods="AshBrokerage.test.LoginPage_test_scenario.loginFlow" duration-ms="13963" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dfsdf -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-07-29T14:02:09 IST" name="tearDown" finished-at="2025-07-29T14:02:09 IST" duration-ms="143" status="PASS">
+        </test-method> <!-- client_create -->
+        <test-method signature="termQuote()[pri:0, instance:AshBrokerage.test.LoginPage_test_scenario@22ff4249]" started-at="2025-08-11T16:51:56 IST" name="termQuote" finished-at="2025-08-11T16:52:01 IST" depends-on-methods="AshBrokerage.test.LoginPage_test_scenario.client_create" duration-ms="5162" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
+        </test-method> <!-- termQuote -->
       </class> <!-- AshBrokerage.test.LoginPage_test_scenario -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
