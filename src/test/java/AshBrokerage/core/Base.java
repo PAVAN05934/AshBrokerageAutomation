@@ -23,7 +23,7 @@ public WebDriver driver;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 	}
 	
-	@AfterSuite
+//	@AfterSuite
 	public void tearDown() {
 		driver.close();
 	}

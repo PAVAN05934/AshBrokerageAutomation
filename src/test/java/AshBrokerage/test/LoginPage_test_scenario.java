@@ -3,8 +3,12 @@ package AshBrokerage.test;
 import org.testng.annotations.Test;
 
 import AshBrokerage.core.Base;
+import AshBrokerage.main.ClientPage;
+import AshBrokerage.main.ClientsPage;
+import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.LoginPage;
 import AshBrokerage.main.OrganizationPage;
+import AshBrokerage.main.ProductTypePage;
 
 public class LoginPage_test_scenario extends Base{
 	
@@ -22,7 +26,7 @@ public class LoginPage_test_scenario extends Base{
 	
 	//Invalid Username and Password scenario
 //	@Test
-	public void invalidCredentialPass() {
+	public void invalidCredentialPass() throws InterruptedException {
 		OrganizationPage org = new OrganizationPage(driver);
 		org.enteroriganzationName();
 		org.clickonContinuebtn(); 
@@ -31,14 +35,37 @@ public class LoginPage_test_scenario extends Base{
 		login.invalidPass();
 		login.clickOnContinueBtn();
 		login.errormsg();
+		
 	}
+ 
 	
 	@Test(dependsOnMethods="loginFlow")
-	public void dfsdf() throws InterruptedException {
-		Thread.sleep(10000);
-		String url = driver.getCurrentUrl();
-		System.out.println("URL is" + url);
+	public void client_create() throws InterruptedException {
+		Dashboard dash = new Dashboard(driver);
+		dash.regularMode();
+		dash.Client_btn();
+		ClientsPage cp = new ClientsPage(driver);
+		cp.AddClientBtn();
+		ClientPage clientpa = new ClientPage(driver);
+		clientpa.firstName();
+		clientpa.lastName();
+		clientpa.DOB();
+		clientpa.genderSelection();
+		clientpa.savebtn();
+		Thread.sleep(5000);
 	}
+		
+		
+		@Test(dependsOnMethods="client_create")
+		public void termQuote() throws InterruptedException {
+		ClientPage clientpa = new ClientPage(driver);
+		clientpa.quoteApplyBtn();
+		ProductTypePage product = new ProductTypePage(driver);
+		Thread.sleep(5000);
+		product.termBtn();
+		
+	}
+}
 	
 	
 	
@@ -47,4 +74,4 @@ public class LoginPage_test_scenario extends Base{
 	
 	
 
-}
+
