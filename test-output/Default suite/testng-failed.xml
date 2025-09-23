@@ -5,9 +5,11 @@
     <classes>
       <class name="AshBrokerage.test.LoginPage_test_scenario">
         <methods>
+          <include name="termQuote"/>
           <include name="client_create"/>
           <include name="setup"/>
           <include name="loginFlow"/>
+          <include name="TermFlow"/>
         </methods>
       </class> <!-- AshBrokerage.test.LoginPage_test_scenario -->
     </classes>

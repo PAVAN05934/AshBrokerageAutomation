@@ -8,6 +8,7 @@ import AshBrokerage.main.ClientsPage;
 import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.LoginPage;
 import AshBrokerage.main.OrganizationPage;
+import AshBrokerage.main.Pre_UnderWriting_page_1;
 import AshBrokerage.main.ProductTypePage;
 
 public class LoginPage_test_scenario extends Base{
@@ -65,6 +66,26 @@ public class LoginPage_test_scenario extends Base{
 		product.termBtn();
 		
 	}
+		@Test(dependsOnMethods="termQuote")
+		public void TermFlow() throws InterruptedException {
+			ProductTypePage product = new ProductTypePage(driver);
+			product.stateSelection();
+			product.faceAmountEnter();
+			product.termLengthSelectionDropdown();
+			product.termLenthSelect();
+			product.clickOnPersonalizedQuoteBtn();
+			Pre_UnderWriting_page_1 preUnderWri = new Pre_UnderWriting_page_1(driver);
+			preUnderWri.feetinHeightDropDown();
+			preUnderWri.inchInheight();
+			preUnderWri.weightPass();
+			preUnderWri.usCitizenRadioBtn();
+			preUnderWri.tobaccoOrNicotineDropdown();
+			preUnderWri.tobaccoOrNicotineUse();
+			preUnderWri.marijuanaDropdown();
+			preUnderWri.marijuanaeUse();
+			preUnderWri.healthConditionDropDown();
+			preUnderWri.clickOnNextBtn();
+		}
 }
 	
 	
