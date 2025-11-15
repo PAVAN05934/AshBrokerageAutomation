@@ -18,6 +18,7 @@ import AshBrokerage.main.Pre_UnderWriting_page_3;
 import AshBrokerage.main.ProductTypePage;
 import AshBrokerage.main.QuoterResultPage;
 import AshBrokerage.main.UserProfile;
+import AshBrokerage.main.UsersPage;
 
 public class LoginPage_test_scenario extends Base{
 	
@@ -33,7 +34,7 @@ public class LoginPage_test_scenario extends Base{
 		
 	}
 	
-	//Invalid Username and Password scenario
+	//Invalid User name and Password scenario
 	//@Test
 	public void invalidCredentialPass() throws InterruptedException {
 		OrganizationPage org = new OrganizationPage(driver);
@@ -46,7 +47,6 @@ public class LoginPage_test_scenario extends Base{
 		login.errormsg();
 		
 	}
- 
 	
 	@Test(dependsOnMethods="loginFlow")
 	public void client_create() throws InterruptedException {
@@ -63,7 +63,6 @@ public class LoginPage_test_scenario extends Base{
 		clientpa.savebtn();
 		Thread.sleep(5000);
 	}
-		
 		
 		@Test(dependsOnMethods="client_create")
 		public void termQuote() throws InterruptedException {
@@ -144,16 +143,24 @@ public class LoginPage_test_scenario extends Base{
 			pi2.principalYesRadioBtn();
 			pi2.lifeInsuranceYesRadioBtn();
 			pi2.nextBtn();
-			
-			
-			
+					
 		}
-		//@Test(dependsOnMethods="loginFlow")
+		
+		@Test(dependsOnMethods="loginFlow")
+		 
 		public void userProfileTest() {
 			UserProfile up = new UserProfile(driver);
 			up.userProfileIcon();
 			up.userProfileBtn();
 		}
+		
+		@Test//(dependsOnMethods="client_create")
+		(dependsOnMethods="loginFlow")
+		public void completeUsersPageTest() {
+		    UsersPage usersPage = new UsersPage(driver);
+		    usersPage.completeUsersPage();
+		}
+		
 }
 	
 	
