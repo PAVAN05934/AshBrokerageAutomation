@@ -36,17 +36,17 @@ public class LoginPage_test_scenario extends Base{
 	
 	//Invalid User name and Password scenario
 	//@Test
-	public void invalidCredentialPass() throws InterruptedException {
-		OrganizationPage org = new OrganizationPage(driver);
-		org.enteroriganzationName();
-		org.clickonContinuebtn(); 
-		LoginPage login = new LoginPage(driver);
-		login.invalidEmailid();
-		login.invalidPass();
-		login.clickOnContinueBtn();
-		login.errormsg();
+	//public void invalidCredentialPass() throws InterruptedException {
+	//	OrganizationPage org = new OrganizationPage(driver);
+	//	org.enteroriganzationName();
+	//	org.clickonContinuebtn(); 
+	//	LoginPage login = new LoginPage(driver);
+	//	login.invalidEmailid();
+	//	login.invalidPass();
+	//	login.clickOnContinueBtn();
+	//	login.errormsg();
 		
-	}
+	
 	
 	@Test(dependsOnMethods="loginFlow")
 	public void client_create() throws InterruptedException {

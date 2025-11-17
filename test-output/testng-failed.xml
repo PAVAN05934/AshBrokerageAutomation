@@ -3,15 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AshBrokerage.test.LoginPage_test_scenario">
+      <class name="Feflowtestcase.QuoteApplyTest">
         <methods>
-          <include name="termQuote"/>
-          <include name="client_create"/>
           <include name="setup"/>
-          <include name="loginFlow"/>
-          <include name="TermFlow"/>
+          <include name="runQuoteApplyFlow"/>
         </methods>
-      </class> <!-- AshBrokerage.test.LoginPage_test_scenario -->
+      </class> <!-- Feflowtestcase.QuoteApplyTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
