@@ -1,5 +1,7 @@
 package AshBrokerage.test;
 
+import java.util.Set;
+
 import org.testng.annotations.Test;
 
 import AshBrokerage.core.Base;
@@ -115,11 +117,13 @@ public class LoginPage_test_scenario extends Base{
 			knock.carrierKnockout();
 			knock.continueBtn();
 			PI_Info_Page pi = new PI_Info_Page(driver);	
-			Thread.sleep(5000);
+			Thread.sleep(20000);
+	     	pi.switchWindow();
 			pi.PIisNotOwnerRadioBtn();
 			pi.developerTools();
 			pi.regularModecheckBox();
-			pi.nextBtn();
+			Thread.sleep(5000);
+			pi.nextBtnPI();
 			Policy_Owner_InfoPage policy = new Policy_Owner_InfoPage(driver);
 			Thread.sleep(5000);
 			policy.policyOwnerDropdown();
@@ -144,8 +148,6 @@ public class LoginPage_test_scenario extends Base{
 			pi2.principalYesRadioBtn();
 			pi2.lifeInsuranceYesRadioBtn();
 			pi2.nextBtn();
-			
-			
 			
 		}
 		//@Test(dependsOnMethods="loginFlow")

@@ -1,5 +1,8 @@
 package AshBrokerage.main;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,20 +18,18 @@ public class PI_Info_Page {
 
 	}
 	
-	@FindBy(xpath = "(9//input[@class='mud-radio-input'])[4]")
+	@FindBy(xpath = "(//input[@class='mud-radio-input'])[4]")
 	private WebElement PIisNotOwnerRadioBtn;
 	
 	@FindBy(xpath="(//*[name()='svg'][@role='img'])[9]")
 	    private WebElement DeveloperTools;
 	
-		@FindBy(xpath = "//button[text()='Continue']")
-		private WebElement continueBtn;
+		@FindBy(xpath = "//span[@class='mud-typography mud-typography-button']")
+		private WebElement NextBtn_PI;
 		
 		@FindBy(xpath = "//input[@type='checkbox']")
 		private WebElement RegularModecheckBox;
-		
-		@FindBy(xpath = "//span[text()='Next']")
-		private WebElement NextBtn;
+
 
 		public void PIisNotOwnerRadioBtn() {
 			PIisNotOwnerRadioBtn.click();
@@ -42,12 +43,20 @@ public class PI_Info_Page {
 			RegularModecheckBox.click();
 		}
 		
-		public void nextBtn() {
-			continueBtn.click();
+		public void nextBtnPI() {
+			NextBtn_PI.click();
 		}
 		
-		
+		public void switchWindow() {
+			Set<String> handles = driver.getWindowHandles();
+			Iterator<String> it = handles.iterator();
+			String parent_id = (String) it.next();
+			String child_id = (String) it.next();
+			driver.switchTo().window(child_id);  
+		}
 	
+		
+		
 	
 
 }

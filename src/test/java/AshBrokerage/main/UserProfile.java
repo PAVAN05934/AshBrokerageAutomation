@@ -29,5 +29,11 @@ public class UserProfile {
 			driver.switchTo().frame(userProfileBtn);
 			userProfileBtn.click();
 		}
+		
+		
+		public void usergggchu() {
+			driver.switchTo().frame(userProfileBtn);
+			userProfileBtn.click();
+		}
 
 }
