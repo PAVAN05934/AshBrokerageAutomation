@@ -30,10 +30,11 @@ public class UserProfile {
 			userProfileBtn.click();
 		}
 		
-		
 		public void usergggchu() {
 			driver.switchTo().frame(userProfileBtn);
 			userProfileBtn.click();
 		}
+		
+		
 
 }
