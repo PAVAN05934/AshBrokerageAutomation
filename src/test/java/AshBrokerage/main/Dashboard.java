@@ -43,12 +43,17 @@ public class Dashboard {
 	@FindBy(xpath="//span[@class='ml-3 text-[0.85rem] break-all leading-5 font-light']")
 	private WebElement support_email;
 	
-	
 	@FindBy(xpath="(//input[@class='svelte-17l1npl'])[9]")
 	private WebElement mode;
 	
 	@FindBy(xpath="//div[text()='Regular Mode']")
 	private WebElement RegularMode;
+	
+	@FindBy(xpath="//div[@class='bg-neutral-focus text-neutral-content rounded-full w-12']")
+	private WebElement profile_icon;
+	
+	@FindBy(xpath="(//li[contains(@class,'hidden')]/a)[2]")
+	private WebElement user_profile;
 	
 	public void Client_btn() {
 	//	System.out.println(Clients_btn.isDisplayed());
@@ -64,5 +69,11 @@ public class Dashboard {
 	}
 	
 	
-
+	public void userProfile() {
+        profile_icon.click();
+}
+	
+public void User_p() {
+	user_profile.click();
+}
 }

@@ -22,10 +22,10 @@ public class PI_Info_Continued {
 	private WebElement DisabilityDetails;
 	
 	@FindBy(xpath = "(//input[@class='mud-radio-input'])[4]")
-	private WebElement PrincipalYesRadioBtn;
+	private WebElement PrincipalNoRadioBtn;
 	
 	@FindBy(xpath = "(//input[@class='mud-radio-input'])[6]")
-	private WebElement LifeInsuranceYesRadioBtn;
+	private WebElement LifeInsuranceNoRadioBtn;
 	
 	@FindBy(xpath = "(//span[@class='mud-typography mud-typography-button'])[2]")
 	private WebElement NextBtn;
@@ -39,11 +39,11 @@ public class PI_Info_Continued {
 	}
 	
 	public void principalYesRadioBtn() {
-		PrincipalYesRadioBtn.click();
+		PrincipalNoRadioBtn.click();
 	}
 	
 	public void lifeInsuranceYesRadioBtn() {
-		LifeInsuranceYesRadioBtn.click();
+		LifeInsuranceNoRadioBtn.click();
 	}
 	
 	public void nextBtn() {

@@ -1,1 +1,61 @@
-/target/
+##############################
+# Maven / Gradle build output
+##############################
+target/
+build/
+out/
+
+##############################
+# TestNG / Selenium output
+##############################
+test-output/
+surefire-reports/
+failsafe-reports/
+screenshots/
+reports/
+logs/
+*.log
+
+##############################
+# IDE Specific
+##############################
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+##############################
+# Operating System Files
+##############################
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+##############################
+# Java specific
+##############################
+*.class
+
+##############################
+# Environment / Secrets
+##############################
+*.env
+*.properties.local
+
+##############################
+# Misc
+##############################
+*.tmp
+*.swp
