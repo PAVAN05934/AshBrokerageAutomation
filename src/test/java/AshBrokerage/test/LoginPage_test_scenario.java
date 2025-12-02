@@ -1,5 +1,4 @@
 package AshBrokerage.test;
-
 import org.testng.annotations.Test;
 
 import AshBrokerage.core.Base;
@@ -19,36 +18,15 @@ import AshBrokerage.main.ProductTypePage;
 import AshBrokerage.main.QuoterResultPage;
 import AshBrokerage.main.UserProfile;
 import AshBrokerage.main.UsersPage;
-
+import AshBrokerage.main.StartIULQuote;
+import AshBrokerage.main.IUL_QuoteType;
+import AshBrokerage.main.IUL_Simplified_Solve_For;
+import AshBrokerage.main.InForce_Policies;
+import AshBrokerage.main.IUL_Simplified_Disbusment;
+import AshBrokerage.main.Quote_Resume_Rerun;
 public class LoginPage_test_scenario extends Base{
 	
 	@Test
-	public void loginFlow() { //Valid Credential
-		OrganizationPage org = new OrganizationPage(driver);
-		org.enteroriganzationName();
-		org.clickonContinuebtn();
-		LoginPage login = new LoginPage(driver);
-		login.emailIdPass();
-		login.passwordSend();
-		login.clickOnContinueBtn();
-		
-	}
-	
-	//Invalid User name and Password scenario
-	//@Test
-	//public void invalidCredentialPass() throws InterruptedException {
-	//	OrganizationPage org = new OrganizationPage(driver);
-	//	org.enteroriganzationName();
-	//	org.clickonContinuebtn(); 
-	//	LoginPage login = new LoginPage(driver);
-	//	login.invalidEmailid();
-	//	login.invalidPass();
-	//	login.clickOnContinueBtn();
-	//	login.errormsg();
-		
-	
-	
-	@Test(dependsOnMethods="loginFlow")
 	public void client_create() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.regularMode();
@@ -161,10 +139,77 @@ public class LoginPage_test_scenario extends Base{
 		    usersPage.completeUsersPage();
 		}
 		
+		//Starting of IUL Quote Flow
+		@Test(dependsOnMethods="termQuote")
+		public void startIULQuoteTest()
+		{		
+			StartIULQuote startIUL = new StartIULQuote(driver);
+			startIUL.completeStartIULQuote(
+					"IUL",        // productType
+					"Arizona"    // solicitationState
+					);
+		}
+		
+		@Test(dependsOnMethods="startIULQuoteTest")
+		public void IULQuoteTypeTest() throws InterruptedException {
+		IUL_QuoteType iulQuoteType = new IUL_QuoteType(driver); 
+		iulQuoteType.clickonSimplifiedBtn();
+		}
+		
+		@Test(dependsOnMethods="IULQuoteTypeTest")
+		public void IUL_Simplified_Solve_ForTest() throws InterruptedException {
+			IUL_Simplified_Solve_For iulSolveFor = new IUL_Simplified_Solve_For(driver);
+			iulSolveFor.HealthClass();
+			iulSolveFor.GoalforPolicy();
+		//	iulSolveFor.Solve_For_Protection();
+			iulSolveFor.MonthlyPremium();
+		//	iulSolveFor.PremiumDuration();
+		//	iulSolveFor.SaveAge();
+			iulSolveFor.ClickNextBtn();			
+		}
+		
+		@Test(dependsOnMethods="IUL_Simplified_Solve_ForTest")
+		public void IUL_Simplified_DisbusmentTest() throws InterruptedException {
+			IUL_Simplified_Disbusment iulDisbursement = new IUL_Simplified_Disbusment(driver);
+			iulDisbursement.clickonIllustrateDisbursement();
+			iulDisbursement.clickonBeginDisbursementAge();
+			iulDisbursement.clickonYearsofDisbursement();
+			iulDisbursement.clickonIllustrateBtn();
+		}
+		@Test(dependsOnMethods="loginFlow")
+		public void InforcePolicies() throws InterruptedException {
+			InForce_Policies inp = new InForce_Policies(driver);
+			inp.clickonInForcePolicies();
+			inp.clickonViewBtn();
+			inp.clickonBackBtn();
+		}
+		@Test(dependsOnMethods="loginFlow")
+		public void Quote_Resume_RerunTest() throws InterruptedException {
+			AshBrokerage.main.Quote_Resume_Rerun qrr = new AshBrokerage.main.Quote_Resume_Rerun(driver);
+			qrr.clickonQuoteAndApply();
+			qrr.clickonSearchBox();
+			qrr.clickonResumeBtn();
+		}
+		@Test(dependsOnMethods="loginFlow")
+		public void Quote_RerunTest() throws InterruptedException {
+			Dashboard dash = new Dashboard(driver);
+			dash.regularMode();
+			
+			Quote_Resume_Rerun qrr = new AshBrokerage.main.Quote_Resume_Rerun(driver);
+			qrr.clickonQuoteAndApply();
+			qrr.clickonQuoteAndApply_Rerun();
+			qrr.clickonSearchBox();
+			qrr.clickOnRerunBtn();
+			
+			ProductTypePage product = new ProductTypePage(driver);
+			Thread.sleep(5000);
+			product.termBtn();
+			qrr.QuickQuoteBtnClick();
+			
+		}
 }
-	
-	
-	
+		
+
 	
 	
 	
