@@ -6,7 +6,7 @@
       <class name="Feflowtestcase.QuoteApplyTest">
         <methods>
           <include name="setup"/>
-          <include name="runQuoteApplyFlow"/>
+          <include name="TermFlow"/>
         </methods>
       </class> <!-- Feflowtestcase.QuoteApplyTest -->
     </classes>

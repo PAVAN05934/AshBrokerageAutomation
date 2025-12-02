@@ -21,8 +21,11 @@ public class Policy_Owner_InfoPage {
 	@FindBy(xpath = "//p[text()='Individual']")
 	private WebElement IndividualOption;
 	
-	@FindBy(xpath = "(//input[@class='mud-input-slot mud-input-root mud-input-root-text mud-input-root-adorned-end mud-select-input'])[2]")
+	@FindBy(xpath = "(//input[id='mudinputnmkux6ua'])[2]")
 	private WebElement RelationDropdown;
+	
+	@FindBy(xpath = "//p[text()='Child']")
+	private WebElement ChildOption;
 	
 	@FindBy(xpath = "//input[@class='mud-input-slot mud-input-root mud-input-root-text']")
 	private WebElement OwnerFirstName;
@@ -54,6 +57,9 @@ public class Policy_Owner_InfoPage {
     @FindBy(xpath = "//div[@class='mud-overlay']")
     private WebElement StateDropdown;
     
+    @FindBy(xpath = "//p[text()='Alaska']")
+    private WebElement AlaskaOption;
+    
     @FindBy(xpath = "(//input[@class='mud-input-slot mud-input-root mud-input-root-text'])[10]")
     private WebElement OwnerZipcode;
     
@@ -77,6 +83,7 @@ public class Policy_Owner_InfoPage {
 		
 		public void relationDropdown() {
 			RelationDropdown.click();
+			ChildOption.click();
 		}
 		
 		public void ownerFirstName(String firstName) {
@@ -117,6 +124,7 @@ public class Policy_Owner_InfoPage {
 		
 		public void stateDropdown() {
 			StateDropdown.click();
+			AlaskaOption.click();
 		}
 		
 		public void ownerZipcode(String zipcode) {
