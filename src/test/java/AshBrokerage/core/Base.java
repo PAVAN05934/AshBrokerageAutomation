@@ -10,19 +10,29 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class Base {
-	
-public WebDriver driver;
+import AshBrokerage.main.LoginPage;
+import AshBrokerage.main.OrganizationPage;
 
-@BeforeSuite
+public class Base {
+
+	public WebDriver driver;
+
+	@BeforeSuite
 	public void setup() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://dynamic-advisor-staging.techf.com");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		OrganizationPage org = new OrganizationPage(driver);
+		org.enteroriganzationName();
+		org.clickonContinuebtn();
+		LoginPage login = new LoginPage(driver);
+		login.emailIdPass();
+		login.passwordSend();
+		login.clickOnContinueBtn();
 	}
-	
+
 //	@AfterSuite
 	public void tearDown() {
 		driver.close();

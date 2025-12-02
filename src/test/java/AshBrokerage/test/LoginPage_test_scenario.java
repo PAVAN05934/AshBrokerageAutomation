@@ -25,18 +25,6 @@ import AshBrokerage.main.UsersPage;
 
 public class LoginPage_test_scenario extends Base {
 
-	@Test
-	public void loginFlow() { // Valid Credential
-		OrganizationPage org = new OrganizationPage(driver);
-		org.enteroriganzationName();
-		org.clickonContinuebtn();
-		LoginPage login = new LoginPage(driver);
-		login.emailIdPass();
-		login.passwordSend();
-		login.clickOnContinueBtn();
-
-	}
-
 	// Invalid User name and Password scenario
 	@Test(enabled = false)
 	public void invalidCredentialPass() throws InterruptedException {
@@ -51,7 +39,7 @@ public class LoginPage_test_scenario extends Base {
 
 	}
 
-//	@Test(dependsOnMethods="loginFlow")
+	@Test (priority=1)
 	public void client_create() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.regularMode();
@@ -67,7 +55,7 @@ public class LoginPage_test_scenario extends Base {
 		Thread.sleep(5000);
 	}
 
-	// @Test(dependsOnMethods="client_create")
+	@Test(dependsOnMethods = "client_create", priority=2)
 	public void termQuote() throws InterruptedException {
 		ClientPage clientpa = new ClientPage(driver);
 		clientpa.quoteApplyBtn();
@@ -77,7 +65,7 @@ public class LoginPage_test_scenario extends Base {
 
 	}
 
-//		@Test(dependsOnMethods="termQuote")
+	@Test(dependsOnMethods = "termQuote", priority=3)
 	public void TermFlow() throws InterruptedException {
 		ProductTypePage product = new ProductTypePage(driver);
 		product.stateSelection();
@@ -112,41 +100,9 @@ public class LoginPage_test_scenario extends Base {
 		preUnderWri3.getQuoteBtn();
 		QuoterResultPage quote = new QuoterResultPage(driver);
 		Thread.sleep(10000);
-		/*
-		 * quote.applyBtn(); KnockOutPage knock = new KnockOutPage(driver);
-		 * Thread.sleep(10000); knock.carrierKnockout(); knock.continueBtn();
-		 * PI_Info_Page pi = new PI_Info_Page(driver); Thread.sleep(20000);
-		 * pi.switchWindow(); pi.PIisNotOwnerRadioBtn(); pi.developerTools();
-		 * pi.regularModecheckBox(); Thread.sleep(5000); pi.nextBtnPI();
-		 * Policy_Owner_InfoPage policy = new Policy_Owner_InfoPage(driver);
-		 * Thread.sleep(5000); policy.policyOwnerDropdown(); policy.individualOption();
-		 * policy.ownerFirstName("OwnerFname"); policy.ownerLastName("OwnerLname");
-		 * policy.ownerDOB("01011990"); policy.ownerEmail("owner@gmail.com");
-		 * policy.ownerPhoneNumber("9876543210"); policy.ownerSSN("455553434");
-		 * policy.ownerAddress("123 Street"); policy.ownerAddress2("Address2");
-		 * policy.ownerCity("City"); policy.stateDropdown();
-		 * policy.ownerPrimarylanguageEnglishRadioBtn();
-		 * policy.ownerAnnualIncomeRadioBtn(); policy.nextBtn(); PI_Info_Continued pi2 =
-		 * new PI_Info_Continued(driver); Thread.sleep(5000); pi2.disabledYesRadioBtn();
-		 * pi2.disabilityDetails("Disability details"); pi2.principalYesRadioBtn();
-		 * pi2.lifeInsuranceYesRadioBtn(); pi2.nextBtn();
-		 */
 	}
 
-	// @Test(dependsOnMethods="loginFlow")
-	public void userProfileTest() {
-		UserProfile up = new UserProfile(driver);
-		up.userProfileIcon();
-		up.userProfileBtn();
-	}
-
-	// @Test(dependsOnMethods="loginFlow")
-	public void completeUsersPageTest() {
-		UsersPage usersPage = new UsersPage(driver);
-		usersPage.completeUsersPage();
-	}
-
-	@Test(dependsOnMethods = "loginFlow")
+	@Test(priority = 4)
 	public void userProfile() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.userProfile();
@@ -156,7 +112,17 @@ public class LoginPage_test_scenario extends Base {
 		userInf.edit_btn();
 		userInf.firstName_txt();
 		userInf.lastName_txt();
-
+		userInf.phoneNumber_txt();
+		userInf.address_txt();
+		userInf.city_txt();
+		userInf.npn_txt();
+		// userInf.zip_txt();
+		userInf.insuranceLicenseInfoSection();
+		userInf.addIcon();
+		userInf.newStateAdd();
+		userInf.contactSection();
+		userInf.carrierAdd_Btn();
+		userInf.carrierDrpDown();
 	}
 
 }

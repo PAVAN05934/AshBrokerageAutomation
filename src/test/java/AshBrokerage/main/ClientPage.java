@@ -1,5 +1,6 @@
 package AshBrokerage.main;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,7 @@ public class ClientPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	} 
-	//Client page information 
+	String randomText = RandomStringUtils.randomAlphabetic(10); 
 	
 	
 	@FindBy(xpath="//input[@name=\"firstName\"]")
@@ -46,11 +47,11 @@ public class ClientPage {
 
 	
 	public void firstName() {
-		first_name.sendKeys("fName");
+		first_name.sendKeys(randomText);
 	}
 	
 	public void lastName() {
-		Last_name.sendKeys("lName");
+		Last_name.sendKeys(randomText);
 	}
 	
 	public void DOB() {
