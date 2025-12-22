@@ -28,6 +28,7 @@ import AshBrokerage.main.StartIULQuote;
 import AshBrokerage.main.UserInformationPage;
 import AshBrokerage.main.UserProfile;
 import AshBrokerage.main.UsersPage;
+import AshBrokerage.main.ViewCasePage;
 
 public class LoginPage_test_scenario extends Base {
 
@@ -130,6 +131,16 @@ public class LoginPage_test_scenario extends Base {
 		userInf.carrierAdd_Btn();
 		userInf.carrierDrpDown();
 	}
+	
+	
+	//View Case Page Test
+	
+		@Test
+		public void clickCasesButtonTest() {
+			ViewCasePage viewCasePage = new ViewCasePage(driver);
+		    viewCasePage.clickCasesButton();
+		    
+		}
 	
 	//Starting of IUL Quote Flow
 			@Test(dependsOnMethods="termQuote")
