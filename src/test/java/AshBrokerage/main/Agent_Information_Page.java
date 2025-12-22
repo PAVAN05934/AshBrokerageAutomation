@@ -24,13 +24,60 @@ public class Agent_Information_Page {
     @FindBy(xpath = "//button[@class='mud-button-root mud-icon-button mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple']//span[@class='mud-icon-button-label']//*[name()='svg']")
     private WebElement agentsliptBtn;
     
+    @FindBy(xpath = "//input[@id='mudinputuf1gci2o']")
+    private WebElement agentfirstname;
+    
+    @FindBy(xpath = "//input[@id='mudinputjblrchxs']")
+    private WebElement agentlastname;
+    
+    @FindBy(xpath = "//input[@id='mudinputowwaon0i']")
+    private WebElement agentphone;
+    
+    @FindBy(xpath = "//input[@id='mudinputb62oa25f']")
+    private WebElement agentemail;
+    
+    @FindBy(xpath = "//input[@id='mudinput5226s2k8']")
+    private WebElement agentcarrierwriting;
+    
+    @FindBy(xpath = "//input[@id='mudinputnc7g4ues']")
+    private WebElement agentpercentage;
+    
+    @FindBy(xpath = "//input[@id='mudinputcpn47ywj']")
+    private WebElement agentsplitpercentage;
+    
+    @FindBy(xpath = "//button[@class='mud-button-root mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple']")
+    private WebElement nextBtn;
+    
+    //Action Methods
+	public void agentpercentage() {
+		agentpercentage.sendKeys("10");
+	}
     public void agentYesRadioBtn() {
 		agentYesRadioBtn.click();
-		}
-	
+	}
 	public void agentsliptBtn() {
-		agentsliptBtn.click();		
-		
+		agentsliptBtn.click();				
+	}
+	public void agentfirstname() {
+		agentfirstname.sendKeys("Fname");
+	}
+	public void agentlastname() {
+		agentlastname.sendKeys("Lname");
+	}
+	public void agentphone() {
+		agentphone.sendKeys("(342) 342-3423");
+	}
+	public void agentemail() {
+		agentemail.sendKeys("testing@yopmail.com");
+	}
+	public void agentcarrierwriting() {
+		agentcarrierwriting.sendKeys("000031162");
+	}
+	public void agentsplitpercentage() {
+		agentsplitpercentage.sendKeys("90");
+	}
+	public void nextBtn() {
+		nextBtn.click();
 	}
 }
 
