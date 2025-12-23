@@ -75,5 +75,10 @@ public class Dashboard {
 	
 public void User_p() {
 	user_profile.click();
+	
 }
+	//Cases button tab
+	public void clickCases() {
+		cases_btn.click();
+	}
 }
