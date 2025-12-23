@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Agent_Information_Page {
 	
-	WebDriver driver;
-    WebDriverWait wait;
+	public WebDriver driver;
+    public WebDriverWait wait;
     
     public Agent_Information_Page(WebDriver driver) {
         this.driver = driver;
@@ -49,31 +49,32 @@ public class Agent_Information_Page {
     private WebElement nextBtn;
     
     //Action Methods
-	public void agentpercentage() {
+	public void agentpercentage_txt() {
+		agentpercentage.clear();
 		agentpercentage.sendKeys("10");
 	}
-    public void agentYesRadioBtn() {
+    public void agentYes_RadioBtn() {
 		agentYesRadioBtn.click();
 	}
-	public void agentsliptBtn() {
+	public void agentslipt_btn() {
 		agentsliptBtn.click();				
 	}
-	public void agentfirstname() {
+	public void agentfirstname_txt() {
 		agentfirstname.sendKeys("Fname");
 	}
-	public void agentlastname() {
+	public void agentlastname_txt() {
 		agentlastname.sendKeys("Lname");
 	}
-	public void agentphone() {
+	public void agentphone_txt() {
 		agentphone.sendKeys("(342) 342-3423");
 	}
-	public void agentemail() {
+	public void agentemail_txt() {
 		agentemail.sendKeys("testing@yopmail.com");
 	}
-	public void agentcarrierwriting() {
+	public void agentcarrierwriting_txt() {
 		agentcarrierwriting.sendKeys("000031162");
 	}
-	public void agentsplitpercentage() {
+	public void agentsplitpercentage_txt() {
 		agentsplitpercentage.sendKeys("90");
 	}
 	public void nextBtn() {
