@@ -2,6 +2,7 @@ package AshBrokerage.test;
 
 import java.util.Set;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import AshBrokerage.core.Base;
@@ -135,13 +136,21 @@ public class LoginPage_test_scenario extends Base {
 	
 	//View Case Page Test
 	
-		@Test
-		public void clickCasesButtonTest() {
-			ViewCasePage viewCasePage = new ViewCasePage(driver);
-		    viewCasePage.clickCasesButton();
-		    
-		}
-	
+	@Test
+	public void clickCasesButtonTest() throws InterruptedException {
+
+	    ViewCasePage viewCasePage = new ViewCasePage(driver);
+
+	    viewCasePage.clickCasesButton();
+	    viewCasePage.searchCase("Asia Valiant");
+	    Thread.sleep(5000);
+	    viewCasePage.clickViewCaseButton();
+	   // viewCasePage.clickOpenEappButton();
+	    Thread.sleep(5000);
+	    viewCasePage.clickCompletedCarrierAppLink();
+
+	}
+
 	//Starting of IUL Quote Flow
 			@Test(dependsOnMethods="termQuote")
 			public void startIULQuoteTest()

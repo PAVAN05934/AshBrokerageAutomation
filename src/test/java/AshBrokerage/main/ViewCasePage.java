@@ -1,13 +1,19 @@
 package AshBrokerage.main;
 
+import java.time.Duration;
+import java.util.Set;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ViewCasePage {
 
-   public WebDriver driver;
+    public WebDriver driver;
 
     // -------------------------------
     // Constructor
@@ -15,88 +21,92 @@ public class ViewCasePage {
     public ViewCasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        
     }
-    
-   //Cases button Elements
-    
+
+    // -------------------------------
+    // Page Elements
+    // -------------------------------
+
+    // Cases button
     @FindBy(xpath = "//span[text()='Cases']/parent::a")
     WebElement casesButton;
-    
-    //search box Elements
-    
+
+    // Search box
     @FindBy(xpath = "//input[@placeholder='Search']")
     WebElement searchBox;
-    
-    //View Case button elements
-    
-    @FindBy(xpath = "//body//div//div[@slot='body']//div//div[1]//div[7]//span[1]//div[1]//button[1]")
+
+    // View Case button
+    @FindBy(xpath = "//button[normalize-space()='View Case']/parent::div")
     WebElement viewCaseButton;
 
-    // Open eApp button elements
+    // Open eApp button
     @FindBy(xpath = "//button[normalize-space()='Open eApp']")
     WebElement openEappButton;
     
-    //Completed Carrier Application link elements
-   /* @FindBy(xpath = "//p[@class='cursor-pointer text-blue-500']")
+    @FindBy(xpath = "//p[@class='cursor-pointer text-blue-500']")
     WebElement completedCarrierAppLink;
-    
-    //Resend Email link elements
+
     @FindBy(xpath = "(//*[name()='path'])[8]")
     WebElement resendEmailLink;
-    
-    //Resend message elements
+
     @FindBy(xpath = "//div[@class='toast-message']")
-    WebElement resendMessage; */
+    WebElement resendMessage;
     
     // -------------------------------
-    // Scroll until element is visible
+    // Utility Methods
     // -------------------------------
-   /* public void scrollToElement(WebElement element) {
+
+    public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+        js.executeScript(
+                "arguments[0].scrollIntoView({block: 'center'});",
+                element
+        );
     }
-*/
-    
+
+    public void waitForViewCaseButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(viewCaseButton));
+    }
+
+    // -------------------------------
+    // Page Actions / Methods
+    // -------------------------------
+
     public void clickCasesButton() {
-        
-        try {
-            // Navigate to Users tab
-        	casesButton.click();
+        casesButton.click();
+    }
 
-            // Perform a search action
-        	searchBox.sendKeys("testttttfgffg");
-            
-            // Clear the existing value in the search field
-        	searchBox.clear();
+    public void searchCase(String caseName) {
+        searchBox.clear();
+        searchBox.sendKeys(caseName);
+    }
 
-         // Perform a search action
-        	searchBox.sendKeys("Asia Valiant");
-        	
-        	searchBox.clear();
-        	
-        	viewCaseButton.click();
-        	
-        	openEappButton.click();
-        	
-        	// completedCarrierAppLink.click();
-        	
-        	 // resendEmailLink.click();
-        	
-        	 // resendMessage.isDisplayed();
-        	
-        	Thread.sleep(5000);
-        	
-        } catch (Exception e) {
-			e.printStackTrace();
-			
+    public void clearSearchBox() {
+        searchBox.clear();
+    }
+
+    public void clickViewCaseButton() {
+        waitForViewCaseButton();
+        viewCaseButton.click();
     }
     
+
+    public void clickOpenEappButton() {
+        openEappButton.click();
+    }
+
+    public void clickCompletedCarrierAppLink() {
+		scrollToElement(completedCarrierAppLink);
+		completedCarrierAppLink.click();
+	}
+   
+    public void openCaseAndLaunchEapp(String caseName) throws InterruptedException {
+        clickCasesButton();
+        searchCase(caseName);
+        clickViewCaseButton();
+        clickOpenEappButton();
+        Thread.sleep(5000);
+        clickCompletedCarrierAppLink();
+    }
 }
-    
-}
-
-
-
-        
-        
