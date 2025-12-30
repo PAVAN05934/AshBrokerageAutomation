@@ -2,6 +2,7 @@ package AshBrokerage.test;
 
 import java.util.Set;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.ClientPage;
@@ -27,6 +28,7 @@ import AshBrokerage.main.StartIULQuote;
 import AshBrokerage.main.UserInformationPage;
 import AshBrokerage.main.UserProfile;
 import AshBrokerage.main.UsersPage;
+import AshBrokerage.main.ViewCasePage;
 
 public class LoginPage_test_scenario extends Base {
 
@@ -130,6 +132,24 @@ public class LoginPage_test_scenario extends Base {
 		userInf.carrierDrpDown();
 	}
 	
+	
+	//View Case Page Test
+	
+	@Test
+	public void clickCasesButtonTest() throws InterruptedException {
+
+	    ViewCasePage viewCasePage = new ViewCasePage(driver);
+
+	    viewCasePage.clickCasesButton();
+	    viewCasePage.searchCase("Asia Valiant");
+	    Thread.sleep(5000);
+	    viewCasePage.clickViewCaseButton();
+	   // viewCasePage.clickOpenEappButton();
+	    Thread.sleep(5000);
+	    viewCasePage.clickCompletedCarrierAppLink();
+
+	}
+
 	//Starting of IUL Quote Flow
 			@Test(dependsOnMethods="termQuote")
 			public void startIULQuoteTest()
