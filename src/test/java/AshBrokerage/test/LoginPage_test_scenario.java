@@ -3,7 +3,6 @@ package AshBrokerage.test;
 import java.util.Set;
 
 import org.testng.annotations.Test;
-
 import AshBrokerage.core.Base;
 import AshBrokerage.main.ClientPage;
 import AshBrokerage.main.ClientsPage;
@@ -168,21 +167,21 @@ public class LoginPage_test_scenario extends Base {
 				iulDisbursement.clickonYearsofDisbursement();
 				iulDisbursement.clickonIllustrateBtn();
 			}
-			@Test(dependsOnMethods="loginFlow")
+			@Test
 			public void InforcePolicies() throws InterruptedException {
 				InForce_Policies inp = new InForce_Policies(driver);
 				inp.clickonInForcePolicies();
 				inp.clickonViewBtn();
 				inp.clickonBackBtn();
 			}
-			@Test(dependsOnMethods="loginFlow")
+			@Test
 			public void Quote_Resume_RerunTest() throws InterruptedException {
 				AshBrokerage.main.Quote_Resume_Rerun qrr = new AshBrokerage.main.Quote_Resume_Rerun(driver);
 				qrr.clickonQuoteAndApply();
 				qrr.clickonSearchBox();
 				qrr.clickonResumeBtn();
 			}
-			@Test(dependsOnMethods="loginFlow")
+			@Test
 			public void Quote_RerunTest() throws InterruptedException {
 				Dashboard dash = new Dashboard(driver);
 				dash.regularMode();
