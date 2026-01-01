@@ -15,6 +15,29 @@ public class QuoterResultPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+
+	@FindBy(xpath="(//button[text()='Apply'])[5]")
+	private WebElement applyBtnforPrincipalJourney;
+	
+	@FindBy(xpath="(//button[text()='Apply'])[2]")
+	private WebElement applyBtn;
+	
+	
+	public void applyBtn_ameritasJourney() {
+		applyBtn.click();
+	}
+	
+	public void applyBtn_principalJourney() {
+		applyBtnforPrincipalJourney.click();
+		
+		}
+	
+	
+	
+}
+
+
 
 	// @FindBy(xpath="//p[text()='Principal']")
 	// private WebElement principalJourney;
