@@ -6,9 +6,14 @@ import AshBrokerage.core.Base;
 import AshBrokerage.main.IUL_QuoteType;
 import AshBrokerage.main.IUL_Simplified_Disbusment;
 import AshBrokerage.main.IUL_Simplified_Solve_For;
+import AshBrokerage.main.Pre_UnderWriting_page_1;
+import AshBrokerage.main.Pre_UnderWriting_page_2;
+import AshBrokerage.main.Pre_UnderWriting_page_3;
+import AshBrokerage.main.ProductTypePage;
+import AshBrokerage.main.QuoterResultPage;
 import AshBrokerage.main.StartIULQuote;
 
-public class IUL_Testcases extends Base{ 
+public class IUL_Testcases extends LoginPage_test_scenario { 
 	public WebDriver driver;
 	
 	@Test(groups = {"regression"})
