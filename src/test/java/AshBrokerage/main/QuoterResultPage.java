@@ -16,19 +16,25 @@ public class QuoterResultPage {
 			PageFactory.initElements(driver, this);
 	}
 	
-	//@FindBy(xpath="//p[text()='Principal']")
-	//private WebElement principalJourney;
-	
-	//@FindBy(xpath="//p[text()='Term Non-Convertible']")
-	//private WebElement termNonConvertible;
-	
+
 	@FindBy(xpath="(//button[text()='Apply'])[5]")
+	private WebElement applyBtnforPrincipalJourney;
+	
+	@FindBy(xpath="(//button[text()='Apply'])[2]")
 	private WebElement applyBtn;
 	
-	public void applyBtn() {
+	
+	public void applyBtn_ameritasJourney() {
 		applyBtn.click();
 	}
+	
+	public void applyBtn_principalJourney() {
+		applyBtnforPrincipalJourney.click();
+		
+		}
 	
 	
 	
 }
+
+
