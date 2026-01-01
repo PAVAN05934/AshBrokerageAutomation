@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FE_PreUnderwritingPage1 {
 
-	private WebDriver driver;
+	public WebDriver driver;
 
 
 	@FindBy(xpath = "//input[@placeholder='Feet']")

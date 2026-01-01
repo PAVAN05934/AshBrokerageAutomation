@@ -1,60 +1,101 @@
 package AshBrokerage.main;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class QuoteApplyPage {
 
     private WebDriver driver;
 
-    private By finalExpenseBtn = By.xpath("//button[text()='Final Expense']");
-    private By startNewQuoteRadio = By.xpath("//input[@value='1']");
-    private By nextBtn = By.id("quoter_action_button_next");
+    // =======================
+    // BUTTONS / RADIOS
+    // =======================
 
-    private By stateDropdown = By.xpath("//input[@placeholder='Solicitation State']");
-    private By stateArizona = By.xpath("//div[text()='Arizona']");
+    @FindBy(xpath = "//button[text()='Final Expense']")
+    private WebElement finalExpenseBtn;
 
-    private By faceAmount = By.xpath("//input[@placeholder='Face Amount']");
-    
-    private By IULBtn = By.xpath("//*[@id=\"page-content\"]/div/div[3]/div/div/div/div[2]/div/div[1]/button[3]");
-    private By QuickquoteBtn = By.xpath("//*[@id=\"page-content\"]/div/div[3]/div/div/div/div[2]/div/div[3]/button");
-    private By AdvancestartBtn = By.xpath("//*[@id=\"page-content\"]/div/div[3]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button");
-    private By Selectstatedropdown = By.xpath("//input[@placeholder='Solicitation State']");
-    private By Selectstate = By.xpath("//div[contains(text(),'Arizona')]");
-    
-    
+    @FindBy(xpath = "//input[@value='1']")
+    private WebElement startNewQuoteRadio;
+
+    @FindBy(id = "quoter_action_button_next")
+    private WebElement nextBtn;
+
+    // =======================
+    // STATE SELECTION
+    // =======================
+
+    @FindBy(xpath = "//input[@placeholder='Solicitation State']")
+    private WebElement stateDropdown;
+
+    @FindBy(xpath = "//div[text()='Arizona']")
+    private WebElement stateArizona;
+
+    // =======================
+    // FACE AMOUNT
+    // =======================
+
+    @FindBy(xpath = "//input[@placeholder='Face Amount']")
+    private WebElement faceAmount;
+
+    // =======================
+    // IUL FLOW ELEMENTS
+    // =======================
+
+    @FindBy(xpath = "//*[@id='page-content']/div/div[3]/div/div/div/div[2]/div/div[1]/button[3]")
+    private WebElement IULBtn;
+
+    @FindBy(xpath = "//*[@id='page-content']/div/div[3]/div/div/div/div[2]/div/div[3]/button")
+    private WebElement quickQuoteBtn;
+
+    @FindBy(xpath = "//*[@id='page-content']/div/div[3]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button")
+    private WebElement advanceStartBtn;
+
+    @FindBy(xpath = "//input[@placeholder='Solicitation State']")
+    private WebElement selectStateDropdown;
+
+    @FindBy(xpath = "//div[contains(text(),'Arizona')]")
+    private WebElement selectState;
+
+    // =======================
+    // CONSTRUCTOR
+    // =======================
+
     public QuoteApplyPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
 
-   	}
+    // =======================
+    // ACTION METHODS
+    // =======================
 
     public void selectFinalExpense() {
-        driver.findElement(finalExpenseBtn).click();
-        driver.findElement(startNewQuoteRadio).click();
-        driver.findElement(nextBtn).click();
+        finalExpenseBtn.click();
+        startNewQuoteRadio.click();
+        nextBtn.click();
     }
 
     public void selectIUL() throws InterruptedException {
-    	Thread.sleep(1000);
-        driver.findElement(IULBtn).click();
-        driver.findElement(Selectstatedropdown).click();
-        driver.findElement(Selectstate).click();
-        driver.findElement(QuickquoteBtn).click();
         Thread.sleep(1000);
-        driver.findElement(AdvancestartBtn).click();
-        
+        IULBtn.click();
+
+        selectStateDropdown.click();
+        selectState.click();
+
+        quickQuoteBtn.click();
+        Thread.sleep(1000);
+        advanceStartBtn.click();
     }
-    
-    	
+
     public void enterQuoteDetails() {
-        driver.findElement(stateDropdown).click();
-        driver.findElement(stateArizona).click();
+        stateDropdown.click();
+        stateArizona.click();
 
-        driver.findElement(faceAmount).clear();
-        driver.findElement(faceAmount).sendKeys("50000");
+        faceAmount.clear();
+        faceAmount.sendKeys("50000");
 
-        driver.findElement(nextBtn).click();
+        nextBtn.click();
     }
 }

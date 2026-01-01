@@ -3,9 +3,11 @@ package AshBrokerage.test;
 import org.testng.annotations.Test;
 
 import AshBrokerage.core.Base;
-import AshBrokerage.main.ClientInfoPage;
-import AshBrokerage.main.HomePage;
+import AshBrokerage.main.ClientPage;
+import AshBrokerage.main.ClientsPage;
+import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.Iul_advance_page;
+import AshBrokerage.main.ProductTypePage;
 import AshBrokerage.main.QuoteApplyPage;
 
 public class IUL_advance_Flow extends Base {
@@ -14,13 +16,22 @@ public class IUL_advance_Flow extends Base {
 
 		Thread.sleep(5000);
 
-		HomePage home = new HomePage(driver);
-		home.selectRegularMode();
-		home.openQuoteApply();
-
-		ClientInfoPage client = new ClientInfoPage(driver);
-		client.startNewQuote();
-		client.enterClientDetails();
+		 Dashboard dash = new Dashboard(driver);
+	        dash.regularMode();
+	        dash.Client_btn();
+			ClientsPage cp = new ClientsPage(driver);
+			cp.AddClientBtn();
+			ClientPage clientpa = new ClientPage(driver);
+			clientpa.firstName();
+			clientpa.lastName();
+			clientpa.DOB();
+			clientpa.genderSelection();
+			clientpa.savebtn();
+			Thread.sleep(5000);
+			ClientPage clientpaq = new ClientPage(driver);
+			clientpaq.quoteApplyBtn();
+			ProductTypePage product = new ProductTypePage(driver);
+			Thread.sleep(5000);
 
 		QuoteApplyPage quote = new QuoteApplyPage(driver);
 		quote.selectIUL();
