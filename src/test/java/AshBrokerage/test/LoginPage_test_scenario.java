@@ -15,6 +15,7 @@ import AshBrokerage.main.InForce_Policies;
 import AshBrokerage.main.KnockOutPage;
 import AshBrokerage.main.LoginPage;
 import AshBrokerage.main.OrganizationPage;
+import AshBrokerage.main.OtherProductPage;
 import AshBrokerage.main.PI_Info_Continued;
 import AshBrokerage.main.PI_Info_Page;
 import AshBrokerage.main.Policy_Owner_InfoPage;
@@ -68,7 +69,7 @@ public class LoginPage_test_scenario extends Base {
 		clientpa.quoteApplyBtn();
 		ProductTypePage product = new ProductTypePage(driver);
 		Thread.sleep(5000);
-		product.termBtn();
+	//	product.termBtn();
 
 	}
 
@@ -217,5 +218,23 @@ public class LoginPage_test_scenario extends Base {
 				product.termBtn();
 				qrr.QuickQuoteBtnClick();
 			}
-
+			//Other Product Quote Flow
+			@Test(dependsOnMethods="termQuote")
+			public void OtherProductPageTest() throws InterruptedException
+			{
+			OtherProductPage otherProductPage = new OtherProductPage(driver);
+			Thread.sleep(5000);
+		    otherProductPage.clickOtherProducts();
+			otherProductPage.completeOtherProductPage(
+			        "Disability",
+			        "Alabama",
+			        //"Preferred Plus Non-Tobacco",
+			        "ABC Insurance",
+			        "Gold Plan",
+			        "150",
+			        "Monthly",
+			        "50000"
+			);
+}
+			
 }

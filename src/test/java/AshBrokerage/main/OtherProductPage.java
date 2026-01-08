@@ -26,7 +26,7 @@ public class OtherProductPage {
     // ================== Product Type ==================
     
     @FindBy(xpath = "//button[text()='Other Products']")
-    WebElement otherProductsBtn;
+    private WebElement otherProductsBtn;
 
     public void clickOtherProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(otherProductsBtn)).click();
