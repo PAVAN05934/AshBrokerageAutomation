@@ -5,6 +5,7 @@ import java.util.Set;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import AshBrokerage.core.Base;
+import AshBrokerage.main.ClientPage;
 import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.InForce_Policies;
 import AshBrokerage.main.LoginPage;
@@ -84,5 +85,47 @@ public class LoginPage_test_scenario extends Base {
 		product.termBtn();
 		qrr.QuickQuoteBtnClick();
 	}
+	
+	//Edit Client Information Test
+	
+		@Test
+		public void EditClient() throws InterruptedException {
+
+			Dashboard dash = new Dashboard(driver);
+			dash.regularMode();
+			dash.Client_btn();
+		    ClientPage client = new ClientPage(driver);
+
+		    // Edit fields using new methods
+		    client.clickViewClientBtn();
+		    client.editFirstName("UpdatedFname");
+		    client.editLastName("UpdatedLname");
+		    client.editDOB("01011990");
+		    //client.editGenderToMale();
+
+		    // Save changes
+		    client.clickSaveAfterEdit();
+
+		    Thread.sleep(3000);
+		    
+		}
+		
+		//Delete Client Information Test
+		
+		@Test
+		public void DeleteClient() throws InterruptedException {
+
+			Dashboard dash = new Dashboard(driver);
+			dash.regularMode();
+			dash.Client_btn();
+		    ClientPage client = new ClientPage(driver);
+
+		    // Save changes
+		    client.clickViewClientBtn();
+		    client.clickDeleteAfterEdit();
+		    client.clickDeleteAfterEdit1();
+		    Thread.sleep(3000);
+		    
+		}
 
 }

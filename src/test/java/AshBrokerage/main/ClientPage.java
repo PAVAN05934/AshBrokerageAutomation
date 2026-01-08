@@ -44,8 +44,24 @@ public class ClientPage {
 	
 	@FindBy(xpath="//button[contains(@class,'btn btn-primary rounded-md shadow-lg btn-next')]")
 	private WebElement Quote_ApplyBtn;
-
 	
+	//Edit Client Information
+	
+	@FindBy(xpath="(//button[contains(text(),'View')])[1]")
+	private WebElement View_Client_btn;
+
+		//Delete Client Information
+
+		@FindBy(xpath="//*[text()='Delete']")
+		private WebElement Delete_Client_btn;
+			
+		@FindBy(xpath="//button[@class='btn btn-sm text-red-500 font-bold sm:text-base border-2 rounded-md shadow-lg border-red-500 bg-inherit hover:bg-red-200 hover:border-red-500']")
+		private WebElement Delete_Client_btn1;
+		
+public void viewClientBtn() {
+		View_Client_btn.click();
+	}
+
 	public void firstName() {
 		first_name.sendKeys(randomText);
 	}
@@ -76,6 +92,53 @@ public class ClientPage {
 		Quote_ApplyBtn.click();
 	}
 	
+ 	//Edit Client Information Methods
 	
+	public void clickViewClientBtn() {
+		View_Client_btn.click();
+	}
+	
+   public void editFirstName(String newFirstName) {
+	first_name.clear();
+	first_name.sendKeys(newFirstName);
+	}
+
+
+	public void editLastName(String newLastName) {
+	Last_name.clear();
+	Last_name.sendKeys(newLastName);
+	}
+
+
+	public void editDOB(String newDOB) {
+	Date_of_Birth.clear();
+	Date_of_Birth.sendKeys(newDOB);
+	}
+
+
+	public void editGenderToMale() {
+	Gender.click();
+	malegender.click();
+	}
+
+
+	public void clickSaveAfterEdit() {
+	save_btn.click();
+	}
+	
+	//Delete Client Information Methods
+
+	public void clickDeleteAfterEdit() {
+		// Auto-generated method stub
+		Delete_Client_btn.click();
+		
+		
+	}
+	
+	public void clickDeleteAfterEdit1() {
+		// Auto-generated method stub
+		Delete_Client_btn1.click();
+	}
+
 
 }
