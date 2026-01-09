@@ -1,8 +1,6 @@
 package AshBrokerage.test;
 
-import java.util.Set;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.Dashboard;
@@ -12,6 +10,7 @@ import AshBrokerage.main.OrganizationPage;
 import AshBrokerage.main.ProductTypePage;
 import AshBrokerage.main.Quote_Resume_Rerun;
 import AshBrokerage.main.UserInformationPage;
+import AshBrokerage.main.ViewCasePage;
 
 public class LoginPage_test_scenario extends Base {
 
@@ -29,7 +28,7 @@ public class LoginPage_test_scenario extends Base {
 
 	}
 
-	@Test // Created User Profile XML file
+	@Test 
 	public void userProfile() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.userProfile();
@@ -52,7 +51,7 @@ public class LoginPage_test_scenario extends Base {
 		userInf.carrierDrpDown();
 	}
 
-	@Test // Done
+	@Test 
 	public void InforcePolicies() throws InterruptedException {
 		InForce_Policies inp = new InForce_Policies(driver);
 		inp.clickonInForcePolicies();
@@ -60,15 +59,15 @@ public class LoginPage_test_scenario extends Base {
 		inp.clickonBackBtn();
 	}
 
-	@Test
+	@Test  
 	public void Quote_Resume_RerunTest() throws InterruptedException {
-		AshBrokerage.main.Quote_Resume_Rerun qrr = new AshBrokerage.main.Quote_Resume_Rerun(driver);
+		Quote_Resume_Rerun qrr = new Quote_Resume_Rerun(driver);
 		qrr.clickonQuoteAndApply();
 		qrr.clickonSearchBox();
 		qrr.clickonResumeBtn();
 	}
 
-	@Test
+	@Test  
 	public void Quote_RerunTest() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.regularMode();
@@ -85,4 +84,18 @@ public class LoginPage_test_scenario extends Base {
 		qrr.QuickQuoteBtnClick();
 	}
 
+	@Test
+	public void clickCasesButtonTest() throws InterruptedException {
+		 
+	    ViewCasePage viewCasePage = new ViewCasePage(driver);
+ 
+	    viewCasePage.clickCasesButton();
+	    viewCasePage.searchCase("Asia Valiant");
+	    Thread.sleep(5000);
+	    viewCasePage.clickViewCaseButton();
+	   // viewCasePage.clickOpenEappButton();
+	    Thread.sleep(5000);
+	    viewCasePage.clickCompletedCarrierAppLink();
+ 
+	}
 }

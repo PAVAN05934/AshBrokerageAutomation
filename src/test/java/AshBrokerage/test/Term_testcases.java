@@ -3,6 +3,7 @@ package AshBrokerage.test;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import AshBrokerage.commonfile.ClintCreationUptoQuoteResultPage;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.KnockOutPage;
 import AshBrokerage.main.Pre_UnderWriting_page_1;
@@ -13,8 +14,10 @@ import AshBrokerage.main.QuoterResultPage;
 
 public class Term_testcases extends Base {
 	
-	@Test(groups = {"regression"})
+	@Test
 	public void TermFlow() throws InterruptedException {
+		ClintCreationUptoQuoteResultPage clientCreation = new ClintCreationUptoQuoteResultPage(driver);
+		clientCreation.creatClient();
 		ProductTypePage product = new ProductTypePage(driver);
 		product.stateSelection();
 		product.faceAmountEnter();

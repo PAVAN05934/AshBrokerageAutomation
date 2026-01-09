@@ -2,10 +2,8 @@ package AshBrokerage.test;
 
 import org.testng.annotations.Test;
 
+import AshBrokerage.commonfile.ClintCreationUptoQuoteResultPage;
 import AshBrokerage.core.Base;
-import AshBrokerage.main.ClientPage;
-import AshBrokerage.main.ClientsPage;
-import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.Pre_UnderWriting_page_1;
 import AshBrokerage.main.Pre_UnderWriting_page_2;
 import AshBrokerage.main.Pre_UnderWriting_page_3;
@@ -17,23 +15,8 @@ public class Quoteproposal_test extends Base {
 	@Test
 	public void TermFlow() throws Exception {
 
-	
-		Dashboard dash = new Dashboard(driver);
-		Thread.sleep(2000);
-		dash.regularMode();
-		dash.Client_btn();
-		ClientsPage cp = new ClientsPage(driver);
-		cp.AddClientBtn();
-		ClientPage client = new ClientPage(driver);
-		client.firstName();
-		client.lastName();
-		client.DOB();
-		client.genderSelection();
-		client.savebtn();
-		Thread.sleep(3000);
-
-		client.quoteApplyBtn();
-
+		ClintCreationUptoQuoteResultPage clientCreation = new ClintCreationUptoQuoteResultPage(driver);
+		clientCreation.creatClient();
 		
 		ProductTypePage product = new ProductTypePage(driver);
 		Thread.sleep(3000);
