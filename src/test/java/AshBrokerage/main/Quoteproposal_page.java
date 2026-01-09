@@ -1,7 +1,6 @@
 package AshBrokerage.main;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -131,8 +130,8 @@ public class Quoteproposal_page {
 		Thread.sleep(3000);
 		Selectyear.click();
 		Thread.sleep(3000);
-		Annual.click();
-		Thread.sleep(2000);
+//		Annual.click();
+//		Thread.sleep(2000);
 		Productdetails.click();
 		Thread.sleep(2000);
 		CloseBtn.click();

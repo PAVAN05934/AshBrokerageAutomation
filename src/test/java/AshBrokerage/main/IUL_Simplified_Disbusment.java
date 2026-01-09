@@ -25,7 +25,7 @@ public class IUL_Simplified_Disbusment {
 	@FindBy(xpath="(//input[@type='text'])[3]")
 	private WebElement YearsofDisbursement;
 	
-	@FindBy(xpath="(//div[@class='item active first svelte-3e0qet'])[1]")
+	@FindBy(xpath="//div[@class='item  svelte-3e0qet']")
 	private WebElement YearsofDisbursementSelect;
 	
 	@FindBy(xpath="(//button[normalize-space()='Illustrate'])[1]")
@@ -42,8 +42,8 @@ public class IUL_Simplified_Disbusment {
 		BeginDisbursementAgeSelect.click();
 		}
 	public void clickonYearsofDisbursement() throws InterruptedException {
-		Thread.sleep(3000);
 		YearsofDisbursement.click();
+		Thread.sleep(5000);
 		YearsofDisbursementSelect.click();
 		}
 	public void clickonIllustrateBtn() throws InterruptedException {

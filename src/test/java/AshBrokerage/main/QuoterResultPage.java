@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 
 public class QuoterResultPage {
 
@@ -16,37 +15,20 @@ public class QuoterResultPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-
 	@FindBy(xpath="(//button[text()='Apply'])[5]")
 	private WebElement applyBtnforPrincipalJourney;
 	
 	@FindBy(xpath="(//button[text()='Apply'])[2]")
-	private WebElement applyBtn;
+	private WebElement applyBtnforAmeritasJourney;
 	
 	
 	public void applyBtn_ameritasJourney() {
-		applyBtn.click();
+		applyBtnforAmeritasJourney.click();
 	}
 	
 	public void applyBtn_principalJourney() {
 		applyBtnforPrincipalJourney.click();
-		
-		}
-	
-	
-	
-}
-
-
-
-	// @FindBy(xpath="//p[text()='Principal']")
-	// private WebElement principalJourney;
-
-	// @FindBy(xpath="//p[text()='Term Non-Convertible']")
-	// private WebElement termNonConvertible;
-
-	@FindBy(xpath = "(//button[text()='Apply'])[5]")
-	private WebElement applyBtn;
+	}
 
 	@FindBy(xpath = "//div[@class='col-span-2 md:col-auto']//input[@type='text']")
 	private WebElement HealthClass;
@@ -59,9 +41,7 @@ public class QuoterResultPage {
 		HealthClass.click();
 	}
 
-	public void applyBtn() {
-		applyBtn.click();
-	}
+
 
 	public void PPT() {
 		PPT.click();

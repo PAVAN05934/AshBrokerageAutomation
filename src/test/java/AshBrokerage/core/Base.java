@@ -3,10 +3,7 @@ package AshBrokerage.core;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeSuite;
-
 import AshBrokerage.main.ClientPage;
 import AshBrokerage.main.ClientsPage;
 import AshBrokerage.main.Dashboard;
@@ -35,26 +32,6 @@ public WebDriver driver;
 		
 	}
 
-	
-	@BeforeGroups("regression")
-	public void creatClient() throws InterruptedException {
-		Dashboard dash = new Dashboard(driver);
-		dash.regularMode();
-		dash.Client_btn();
-		ClientsPage cp = new ClientsPage(driver);
-		cp.AddClientBtn();
-		ClientPage clientpa = new ClientPage(driver);
-		clientpa.firstName();
-		clientpa.lastName();
-		clientpa.DOB();
-		clientpa.genderSelection();
-		clientpa.savebtn();
-		Thread.sleep(5000);
-		clientpa.quoteApplyBtn();
-		ProductTypePage product = new ProductTypePage(driver);
-		Thread.sleep(5000);
-		product.termBtn();
-	}
 	
 	
 //	@AfterSuite

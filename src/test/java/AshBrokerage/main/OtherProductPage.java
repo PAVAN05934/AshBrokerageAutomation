@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class OtherProductPage {
 
-    WebDriver driver;
+    public WebDriver driver;
     WebDriverWait wait;
 
     // ================== Constructor ==================

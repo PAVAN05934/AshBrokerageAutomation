@@ -1,7 +1,6 @@
 package AshBrokerage.main;
 
 import java.time.Duration;
-import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,19 +14,12 @@ public class ViewCasePage {
 
     public WebDriver driver;
 
-    // -------------------------------
-    // Constructor
-    // -------------------------------
     public ViewCasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    // -------------------------------
-    // Page Elements
-    // -------------------------------
-
-    // Cases button
+    
     @FindBy(xpath = "//span[text()='Cases']/parent::a")
     WebElement casesButton;
 
@@ -36,7 +28,7 @@ public class ViewCasePage {
     WebElement searchBox;
 
     // View Case button
-    @FindBy(xpath = "//button[normalize-space()='View Case']/parent::div")
+    @FindBy(xpath = "(//button[normalize-space()='View Case']/parent::div)[2]")
     WebElement viewCaseButton;
 
     // Open eApp button
@@ -65,7 +57,7 @@ public class ViewCasePage {
     }
 
     public void waitForViewCaseButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(viewCaseButton));
     }
 
