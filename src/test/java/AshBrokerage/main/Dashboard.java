@@ -1,83 +1,87 @@
 package AshBrokerage.main;
 
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Dashboard {
-	
+
 	WebDriver driver;
 
-
-	public Dashboard(WebDriver driver){
+	public Dashboard(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	@FindBy(xpath="//span[normalize-space()='Clients']")
+
+	@FindBy(xpath = "//span[normalize-space()='Clients']")
 	private WebElement Clients_btn;
-	
-	@FindBy(xpath="(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[2]")
+
+	@FindBy(xpath = "(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[2]")
 	private WebElement QuotesOrApply_btn;
-	
-	@FindBy(xpath="(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[3]")
+
+	@FindBy(xpath = "(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[3]")
 	private WebElement cases_btn;
-	
-	@FindBy(xpath="(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[4]")
+
+	@FindBy(xpath = "(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[4]")
 	private WebElement Users_btn;
-	
-	@FindBy(xpath="(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[5]")
+
+	@FindBy(xpath = "(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[5]")
 	private WebElement InForcePolicy_btn;
-	
-	@FindBy(xpath="(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[7]")
+
+	@FindBy(xpath = "(//a[@class='flex items-center py-4 hover:bg-primary-focus'])[7]")
 	private WebElement LearnOrDemo_btn;
-	
-	@FindBy(xpath="//span[text()='Call Support']")
+
+	@FindBy(xpath = "//span[text()='Call Support']")
 	private WebElement call_support_btn;
-	
-	@FindBy(xpath="//span[text()='Email Support']")
+
+	@FindBy(xpath = "//span[text()='Email Support']")
 	private WebElement email_support_btn;
-	
-	@FindBy(xpath="//span[@class='ml-3 text-[0.85rem] break-all leading-5 font-light']")
+
+	@FindBy(xpath = "//span[@class='ml-3 text-[0.85rem] break-all leading-5 font-light']")
 	private WebElement support_email;
-	
-	@FindBy(xpath="(//input[@class='svelte-17l1npl'])[9]")
+
+	@FindBy(xpath = "(//input[@class='svelte-17l1npl'])[9]")
 	private WebElement mode;
-	
-	@FindBy(xpath="//div[text()='Regular Mode']")
+
+	@FindBy(xpath = "//div[text()='Regular Mode']")
 	private WebElement RegularMode;
-	
-	@FindBy(xpath="//div[@class='bg-neutral-focus text-neutral-content rounded-full w-12']")
+
+	@FindBy(xpath = "//div[@class='bg-neutral-focus text-neutral-content rounded-full w-12']")
 	private WebElement profile_icon;
-	
-	@FindBy(xpath="(//li[contains(@class,'hidden')]/a)[2]")
+
+	@FindBy(xpath = "(//li[contains(@class,'hidden')]/a)[2]")
 	private WebElement user_profile;
-	
+
 	public void Client_btn() {
-	//	System.out.println(Clients_btn.isDisplayed());
+		// System.out.println(Clients_btn.isDisplayed());
 		Clients_btn.click();
-	
-		
+
 	}
-	
+
 	public void regularMode() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		js.executeScript("arguments[0].scrollIntoView(true);", mode);
 		mode.click();
 		RegularMode.click();
-		
+
 	}
-	
-	
+
 	public void userProfile() {
-        profile_icon.click();
-}
-	
-public void User_p() {
-	user_profile.click();
-	
-}
-	//Cases button tab
+		profile_icon.click();
+	}
+
+	public void User_p() {
+		user_profile.click();
+
+	}
+
+	// Cases button tab
 	public void clickCases() {
 		cases_btn.click();
 	}
