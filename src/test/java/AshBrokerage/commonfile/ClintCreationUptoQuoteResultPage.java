@@ -76,14 +76,8 @@ public class ClintCreationUptoQuoteResultPage {
 		preUnderWri3.criminalhistory();
 		preUnderWri3.businessRelated();
 		preUnderWri3.getQuoteBtn();
-		QuoterResultPage quote = new QuoterResultPage(driver);
-		Thread.sleep(10000);
-		quote.applyBtn_ameritasJourney();
-		KnockOutPage knock = new KnockOutPage(driver);
-		Thread.sleep(5000);
-		knock.carrierKnockout();
-		Thread.sleep(5000);
-		knock.continueBtn();
+		
+
 	}
 
 }

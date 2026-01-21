@@ -25,12 +25,14 @@ public class PI_Info_Page {
 	    private WebElement DeveloperTools;
 	
 		@FindBy(xpath = "//span[@class='mud-typography mud-typography-button']")
-		private WebElement NextBtn_PI;
+		private WebElement NextBtn_PI;    
 		
 		@FindBy(xpath = "//input[@type='checkbox']")
 		private WebElement RegularModecheckBox;
-
-
+		
+		@FindBy(xpath = "(//input[@class='mud-input-slot mud-input-root mud-input-root-text'])[9]")
+		private WebElement driverLicenseNumber;
+		
 		public void PIisNotOwnerRadioBtn() {
 			PIisNotOwnerRadioBtn.click();
 		}
@@ -43,20 +45,15 @@ public class PI_Info_Page {
 			RegularModecheckBox.click();
 		}
 		
-		public void nextBtnPI() {
+		public void nextBtnPI() throws InterruptedException {
+			Thread.sleep(10000);
 			NextBtn_PI.click();
 		}
 		
-		public void switchWindow() {
-			Set<String> handles = driver.getWindowHandles();
-			Iterator<String> it = handles.iterator();
-			String parent_id = (String) it.next();
-			String child_id = (String) it.next();
-			driver.switchTo().window(child_id);  
-		}
-	
-		
+		public void driverLicenseNumber_txt()  {
+			
 		
 	
-
+}
+		
 }
