@@ -20,7 +20,7 @@ public class ProductTypePage {
 	@FindBy(xpath="//input[@class='svelte-17l1npl']")
 	private WebElement State_Dropdown;
 	
-	@FindBy(xpath="//div[text()='Arizona']")
+	@FindBy(xpath="//div[text()='Idaho']")
 	private WebElement stateSelect;
 	
 	@FindBy(xpath="//input[@placeholder='Face Amount']")

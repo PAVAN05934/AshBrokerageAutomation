@@ -1,6 +1,5 @@
 package AshBrokerage.test;
 
-
 import org.testng.annotations.Test;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.ClientPage;
@@ -29,7 +28,7 @@ public class LoginPage_test_scenario extends Base {
 
 	}
 
-	@Test 
+	@Test
 	public void userProfile() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.userProfile();
@@ -52,7 +51,7 @@ public class LoginPage_test_scenario extends Base {
 		userInf.carrierDrpDown();
 	}
 
-	@Test 
+	@Test
 	public void InforcePolicies() throws InterruptedException {
 		InForce_Policies inp = new InForce_Policies(driver);
 		inp.clickonInForcePolicies();
@@ -60,7 +59,7 @@ public class LoginPage_test_scenario extends Base {
 		inp.clickonBackBtn();
 	}
 
-	@Test  
+	@Test
 	public void Quote_Resume_RerunTest() throws InterruptedException {
 		Quote_Resume_Rerun qrr = new Quote_Resume_Rerun(driver);
 		qrr.clickonQuoteAndApply();
@@ -68,7 +67,7 @@ public class LoginPage_test_scenario extends Base {
 		qrr.clickonResumeBtn();
 	}
 
-	@Test  
+	@Test
 	public void Quote_RerunTest() throws InterruptedException {
 		Dashboard dash = new Dashboard(driver);
 		dash.regularMode();
@@ -84,61 +83,61 @@ public class LoginPage_test_scenario extends Base {
 		product.termBtn();
 		qrr.QuickQuoteBtnClick();
 	}
-	
-	//Edit Client Information Test
-	
-		@Test
-		public void EditClient() throws InterruptedException {
 
-			Dashboard dash = new Dashboard(driver);
-			dash.regularMode();
-			dash.Client_btn();
-		    ClientPage client = new ClientPage(driver);
+	// Edit Client Information Test
 
-		    // Edit fields using new methods
-		    client.clickViewClientBtn();
-		    client.editFirstName("UpdatedFname");
-		    client.editLastName("UpdatedLname");
-		    client.editDOB("01011990");
-		    //client.editGenderToMale();
+	@Test
+	public void EditClient() throws InterruptedException {
 
-		    // Save changes
-		    client.clickSaveAfterEdit();
+		Dashboard dash = new Dashboard(driver);
+		dash.regularMode();
+		dash.Client_btn();
+		ClientPage client = new ClientPage(driver);
 
-		    Thread.sleep(3000);
-		    
-		}
-		
-		//Delete Client Information Test
-		
-		@Test
-		public void DeleteClient() throws InterruptedException {
+		// Edit fields using new methods
+		client.clickViewClientBtn();
+		client.editFirstName("UpdatedFname");
+		client.editLastName("UpdatedLname");
+		client.editDOB("01011990");
+		// client.editGenderToMale();
 
-			Dashboard dash = new Dashboard(driver);
-			dash.regularMode();
-			dash.Client_btn();
-		    ClientPage client = new ClientPage(driver);
+		// Save changes
+		client.clickSaveAfterEdit();
 
-		    // Save changes
-		    client.clickViewClientBtn();
-		    client.clickDeleteAfterEdit();
-		    client.clickDeleteAfterEdit1();
-		    Thread.sleep(3000);
-		    
-		}
+		Thread.sleep(3000);
+
+	}
+
+	// Delete Client Information Test
+
+	@Test
+	public void DeleteClient() throws InterruptedException {
+
+		Dashboard dash = new Dashboard(driver);
+		dash.regularMode();
+		dash.Client_btn();
+		ClientPage client = new ClientPage(driver);
+
+		// Save changes
+		client.clickViewClientBtn();
+		client.clickDeleteAfterEdit();
+		client.clickDeleteAfterEdit1();
+		Thread.sleep(3000);
+
+	}
 
 	@Test
 	public void clickCasesButtonTest() throws InterruptedException {
-		 
-	    ViewCasePage viewCasePage = new ViewCasePage(driver);
- 
-	    viewCasePage.clickCasesButton();
-	    viewCasePage.searchCase("Asia Valiant");
-	    Thread.sleep(5000);
-	    viewCasePage.clickViewCaseButton();
-	   // viewCasePage.clickOpenEappButton();
-	    Thread.sleep(5000);
-	    viewCasePage.clickCompletedCarrierAppLink();
- 
+
+		ViewCasePage viewCasePage = new ViewCasePage(driver);
+
+		viewCasePage.clickCasesButton();
+		viewCasePage.searchCase("Asia Valiant");
+		Thread.sleep(5000);
+		viewCasePage.clickViewCaseButton();
+		// viewCasePage.clickOpenEappButton();
+		Thread.sleep(5000);
+		viewCasePage.clickCompletedCarrierAppLink();
+
 	}
 }
