@@ -1,9 +1,13 @@
 package AshBrokerage.main;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FE_PreUnderwritingPage1 {
 
@@ -48,9 +52,10 @@ public class FE_PreUnderwritingPage1 {
 
 	public void fillPreUnderwritingPage1() throws InterruptedException {
 
-		Thread.sleep(1500);
-
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(FeetInput));
 		FeetInput.click();
+
 		FeetValue.click();
 
 		InchInput.click();

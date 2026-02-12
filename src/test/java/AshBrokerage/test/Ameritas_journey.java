@@ -8,6 +8,7 @@ import AshBrokerage.commonfile.ClintCreationUptoQuoteResultPage;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.KnockOutPage;
 import AshBrokerage.main.PI_Info_Page;
+import AshBrokerage.main.ProposedInsuredInfo_Second;
 import AshBrokerage.main.QuoterResultPage;
 
 public class Ameritas_journey extends Base{
@@ -37,6 +38,12 @@ public class Ameritas_journey extends Base{
 	                System.out.println("Switched to child window" + childWindow);
 	                Thread.sleep(5000);
 	                pi.nextBtnPI();
+	                Thread.sleep(5000);
+	                ProposedInsuredInfo_Second PIISecond = new ProposedInsuredInfo_Second(driver);
+	                PIISecond.usArmedForcesYesRadioBtn();
+	                PIISecond.pendingAnotherCompanyYesRadioBtn();
+	                PIISecond.health_insudeclinedYesRadioBtn();
+	                PIISecond.nextBtn();
 	            }
 	        }
 		

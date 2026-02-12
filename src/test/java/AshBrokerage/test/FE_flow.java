@@ -28,9 +28,7 @@ public class FE_flow extends Base {
 		Thread.sleep(1500);
 		pre2.completePreUnderwritingPage2();
 
-		QuoterResultPage SelectHealthClass = new QuoterResultPage(driver);
-		SelectHealthClass.HealthClass();
-		SelectHealthClass.PPT();
 
+	
 	}
 }
