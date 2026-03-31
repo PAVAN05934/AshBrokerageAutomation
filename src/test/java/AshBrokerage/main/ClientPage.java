@@ -1,10 +1,14 @@
 package AshBrokerage.main;
 
+import java.time.Duration;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ClientPage {
 	
@@ -42,7 +46,7 @@ public class ClientPage {
 	@FindBy(xpath="//button[@class=\"btn btn-primary rounded-md shadow-lg btn-next lg:w-40\" and text()=\"Term\"]")
 	public WebElement term_quote;    
 	
-	@FindBy(xpath="//button[contains(@class,'btn btn-primary rounded-md shadow-lg btn-next')]")
+	@FindBy(xpath="//button[text()='Quote / Apply']")
 	private WebElement Quote_ApplyBtn;
 	
 	//Edit Client Information
@@ -89,7 +93,8 @@ public void viewClientBtn() {
 	}
 	
 	public void quoteApplyBtn() {
-		Quote_ApplyBtn.click();
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    wait.until(ExpectedConditions.elementToBeClickable(Quote_ApplyBtn)).click();
 	}
 	
  	//Edit Client Information Methods

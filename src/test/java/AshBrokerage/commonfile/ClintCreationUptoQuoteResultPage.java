@@ -5,11 +5,13 @@ import org.openqa.selenium.WebDriver;
 import AshBrokerage.main.ClientPage;
 import AshBrokerage.main.ClientsPage;
 import AshBrokerage.main.Dashboard;
+import AshBrokerage.main.FE_PreUnderwritingPage2;
 import AshBrokerage.main.KnockOutPage;
 import AshBrokerage.main.Pre_UnderWriting_page_1;
 import AshBrokerage.main.Pre_UnderWriting_page_2;
 import AshBrokerage.main.Pre_UnderWriting_page_3;
 import AshBrokerage.main.ProductTypePage;
+import AshBrokerage.main.QuoteApplyPage;
 import AshBrokerage.main.QuoterResultPage;
 
 public class ClintCreationUptoQuoteResultPage {
@@ -34,12 +36,9 @@ public class ClintCreationUptoQuoteResultPage {
 		clientpa.DOB();
 		clientpa.genderSelection();
 		clientpa.savebtn();
-		
-		Thread.sleep(5000);
 		clientpa.quoteApplyBtn();
 		
 		ProductTypePage product = new ProductTypePage(driver);
-		Thread.sleep(5000);
 		product.termBtn();
 	}
 	
@@ -51,6 +50,7 @@ public class ClintCreationUptoQuoteResultPage {
 		product.termLengthSelectionDropdown();
 		product.termLenthSelect();
 		product.clickOnPersonalizedQuoteBtn();
+		
 		Pre_UnderWriting_page_1 preUnderWri = new Pre_UnderWriting_page_1(driver);
 		preUnderWri.feetinHeightDropDown();
 		preUnderWri.inchInheight();
@@ -77,7 +77,30 @@ public class ClintCreationUptoQuoteResultPage {
 		preUnderWri3.businessRelated();
 		preUnderWri3.getQuoteBtn();
 		
-
+	}
+	
+	public void FEFlowUptoQuoteResult() throws InterruptedException {
+		QuoteApplyPage quote = new QuoteApplyPage(driver);
+		quote.selectFinalExpense();
+		ProductTypePage product = new ProductTypePage(driver);
+		product.stateSelection();
+		product.FEfaceAmountEnter();
+		Thread.sleep(5000);
+		product.clickOnPersonalizedQuoteBtn();
+		
+		Pre_UnderWriting_page_1 preUnderWri = new Pre_UnderWriting_page_1(driver);
+		preUnderWri.feetinHeightDropDown();
+		preUnderWri.inchInheight();
+		preUnderWri.weightPass();
+		preUnderWri.chronicCondition();
+		preUnderWri.tobaccoOrNicotineDropdown();
+		preUnderWri.tobaccoOrNicotineUse();
+		preUnderWri.healthConditionDropDown();
+		preUnderWri.clickOnNextBtn();
+		Thread.sleep(5000);
+		FE_PreUnderwritingPage2 preUnderWri2 = new FE_PreUnderwritingPage2(driver);
+		preUnderWri2.completePreUnderwritingPage2();
+		
 	}
 
 }

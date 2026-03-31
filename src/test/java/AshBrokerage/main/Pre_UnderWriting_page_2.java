@@ -5,29 +5,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import AshBrokerage.commonfile.Waits;
+
 public class Pre_UnderWriting_page_2 {
 	
 	public WebDriver driver;
-
+	public Waits waits;
+	
 	public Pre_UnderWriting_page_2(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);	
+		PageFactory.initElements(driver, this);
+		waits = new Waits(driver);
 	}
 	
-	@FindBy(xpath = "//input[@name='noHealthConditions2']")
+	@FindBy(xpath = "//span[text()='None of the above']")
 	private WebElement noHealthCondition2;
 	
-	@FindBy(xpath = "(//input[@name='conditionsFamilyHxParents'])[2]")
+	@FindBy(xpath = "//span[text()='No']/parent::div")
 	private WebElement conditionsFamilyHxParents;
 	
-	@FindBy(xpath = "(//input[@name='conditionsFamilyHxSiblings'])[2]")
+	@FindBy(xpath = "(//span[text()='No'])[2]")
 	private WebElement conditionsFamilyHxSiblings;
 
 	@FindBy(xpath = "//button[@id='quoter_action_button_next']")
 	private WebElement NextBtn;
 
 	public void noHealthCondition2() {
-		noHealthCondition2.click();
+		waits.clickWhenReady(noHealthCondition2);
 	}
 	
 	public void conditionsFamilyHxParents() {

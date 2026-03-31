@@ -5,36 +5,40 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import AshBrokerage.commonfile.Waits;
+
 public class Pre_UnderWriting_page_3 {
 	
 	public WebDriver driver;
-
+	public Waits waits;
 	public Pre_UnderWriting_page_3(WebDriver driver) {
-     this.driver = driver;
-     PageFactory.initElements(driver, this);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		waits = new Waits(driver);
 
 	}
 	
-	@FindBy(xpath = "(//input[@name='drivingConvictionDui'])[2]")
+	@FindBy(xpath = "//span[text()='No']")
 	private WebElement drivingConvictionDui;
 	
-	@FindBy(xpath = "(//input[@name='drivingConvictionViolations'])[2]")
+	@FindBy(xpath = "(//span[text()='No'])[2]")
 	private WebElement drivingConvictionViolations;
 	
-	@FindBy(xpath = "(//input[@name='drivingConvictionSuspension'])[2]")
+	@FindBy(xpath = "(//span[text()='No'])[3]")
 	private WebElement drivingConvictionSuspension;
 	
-	@FindBy(xpath = "(//input[@name='criminalhistory'])[2]")
+	@FindBy(xpath = "(//span[text()='No'])[4]")
 	private WebElement criminalhistory;
 	
-	@FindBy(xpath = "(//input[@name='businessRelated'])[2]")
+	@FindBy(xpath = "(//span[text()='No'])[5]")
 	private WebElement businessRelated;
 	
 	@FindBy(xpath = "//button[@id='quoter_action_button_quote']")
 	private WebElement getQuoteBtn;
 	
 	public void drivingConvictionDui() {
-		drivingConvictionDui.click();
+		waits.clickWhenReady(drivingConvictionDui);
+	
 	}
 	
 	public void drivingConvictionViolations() {

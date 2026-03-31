@@ -54,7 +54,7 @@ public class LoginPage_test_scenario extends Base {
 	@Test
 	public void InforcePolicies() throws InterruptedException {
 		InForce_Policies inp = new InForce_Policies(driver);
-		inp.clickonInForcePolicies();
+		inp.clickOnInForcePolicies();
 		inp.clickonViewBtn();
 		inp.clickonBackBtn();
 	}

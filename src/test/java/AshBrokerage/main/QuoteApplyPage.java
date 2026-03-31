@@ -74,7 +74,7 @@ public class QuoteApplyPage {
     public void selectFinalExpense() {
         finalExpenseBtn.click();
         startNewQuoteRadio.click();
-        nextBtn.click();
+      
     }
 
     public void selectIUL() throws InterruptedException {
