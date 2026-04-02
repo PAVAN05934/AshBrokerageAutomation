@@ -25,13 +25,13 @@ package AshBrokerage.main;
 
 	    // ------------------- LOCATORS -------------------
 
-	    @FindBy(xpath = "//input[@name='noHealthConditions3']")
+	    @FindBy(xpath = "//span[text()='None of the above']")
 	    private WebElement noneOfTheAboveCheckBox1;
 
-	    @FindBy(xpath = "//div[@class='w-full custom-radio']//input[@name='criminalhistory']")
+	    @FindBy(xpath = "//span[text()='No']")
 	    private WebElement criminalHistoryNo;
 
-	    @FindBy(xpath = "//div[@class='w-full custom-radio']//input[@name='drivingConvictionDui']")
+	    @FindBy(xpath = "(//span[text()='No'])[2]")
 	    private WebElement drivingConvictionDuiNo;
 
 	    @FindBy(id = "quoter_action_button_next")

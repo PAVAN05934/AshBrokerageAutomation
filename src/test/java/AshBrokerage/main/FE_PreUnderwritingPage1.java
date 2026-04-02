@@ -14,20 +14,6 @@ public class FE_PreUnderwritingPage1 {
 	public WebDriver driver;
 
 
-	@FindBy(xpath = "//input[@placeholder='Feet']")
-	private WebElement FeetInput;
-
-	@FindBy(xpath = "//div[text()='5']")
-	private WebElement FeetValue;
-
-	@FindBy(xpath = "//input[@placeholder='Inches']")
-	private WebElement InchInput;
-
-	@FindBy(xpath = "//div[text()='10']")
-	private WebElement InchValue;
-
-	@FindBy(name = "Weight")
-	private WebElement WeightInput;
 
 	@FindBy(xpath = "//input[@name='care']")
 	private WebElement CareRadio;
@@ -51,18 +37,6 @@ public class FE_PreUnderwritingPage1 {
 	}
 
 	public void fillPreUnderwritingPage1() throws InterruptedException {
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.elementToBeClickable(FeetInput));
-		FeetInput.click();
-
-		FeetValue.click();
-
-		InchInput.click();
-		InchValue.click();
-
-		WeightInput.clear();
-		WeightInput.sendKeys("150");
 
 		CareRadio.click();
 

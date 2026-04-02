@@ -4,11 +4,7 @@ import org.testng.annotations.Test;
 
 import AshBrokerage.commonfile.ClintCreationUptoQuoteResultPage;
 import AshBrokerage.core.Base;
-import AshBrokerage.main.ClientPage;
-import AshBrokerage.main.ClientsPage;
-import AshBrokerage.main.Dashboard;
 import AshBrokerage.main.Iul_advance_page;
-import AshBrokerage.main.ProductTypePage;
 import AshBrokerage.main.QuoteApplyPage;
 
 public class IUL_advance_Flow extends Base {

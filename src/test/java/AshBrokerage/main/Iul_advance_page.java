@@ -27,16 +27,16 @@ public class Iul_advance_page {
 	@FindBy(xpath = "//div[@class='item first hover svelte-3e0qet']")
 	private WebElement SelectOptions;
 
-	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='col-span-12']/child::input")
 	private WebElement Allocation1;
 
-	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "(//div[@class='col-span-12']/child::input)[3]")
 	private WebElement Allocation2;
 
-	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[2]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='col-span-12']/child::input[5]")
 	private WebElement Allocation3;
 
-	@FindBy(xpath = "//body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[4]/td[2]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='col-span-12']/child::input[7]")
 	private WebElement Allocation4;
 
 	@FindBy(xpath = "//span[normalize-space()='Loan Report']")
@@ -71,7 +71,6 @@ public class Iul_advance_page {
 		Allocation1.sendKeys("25");
 		Allocation2.sendKeys("25");
 		Allocation3.sendKeys("25");
-		Thread.sleep(1000);
 		Allocation4.sendKeys("25");
 		NextBtn.click();
 	}

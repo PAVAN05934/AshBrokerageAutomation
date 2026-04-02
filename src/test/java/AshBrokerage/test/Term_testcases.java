@@ -14,9 +14,4 @@ public class Term_testcases extends Base {
 		clientCreation.TermFlow_UptoQuoteResult_Page();
 	}
 	
-	
-	
-
-	
-
 }
