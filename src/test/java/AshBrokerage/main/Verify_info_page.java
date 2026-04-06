@@ -5,13 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Beneficiary_Info_page {
+public class Verify_info_page {
 	
-	public WebDriver driver;
-	
-	public Beneficiary_Info_page(WebDriver driver) {
+	private WebDriver driver;
+
+	public Verify_info_page(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this);	
+		
 	}
 	
 	@FindBy(xpath = "//span[text()='Next']")

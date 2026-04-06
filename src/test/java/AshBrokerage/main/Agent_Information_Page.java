@@ -47,6 +47,7 @@ public class Agent_Information_Page {
     
     @FindBy(xpath = "//button[@class='mud-button-root mud-button mud-button-filled mud-button-filled-primary mud-button-filled-size-medium mud-ripple']")
     private WebElement nextBtn;
+  
     
     //Action Methods
 	public void agentpercentage_txt() {
@@ -80,6 +81,7 @@ public class Agent_Information_Page {
 	public void nextBtn() {
 		nextBtn.click();
 	}
+	
 }
 
 	
