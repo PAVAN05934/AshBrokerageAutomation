@@ -33,10 +33,10 @@ public class Iul_advance_page {
 	@FindBy(xpath = "(//div[@class='col-span-12']/child::input)[3]")
 	private WebElement Allocation2;
 
-	@FindBy(xpath = "//div[@class='col-span-12']/child::input[5]")
+	@FindBy(xpath = "(//div[@class='col-span-12']/child::input)[5]")
 	private WebElement Allocation3;
 
-	@FindBy(xpath = "//div[@class='col-span-12']/child::input[7]")
+	@FindBy(xpath = "(//div[@class='col-span-12']/child::input)[7]")
 	private WebElement Allocation4;
 
 	@FindBy(xpath = "//span[normalize-space()='Loan Report']")

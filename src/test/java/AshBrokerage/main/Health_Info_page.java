@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Beneficiary_Info_page {
+public class Health_Info_page {
 	
-	public WebDriver driver;
-	
-	public Beneficiary_Info_page(WebDriver driver) {
+	private WebDriver driver;
+
+	public Health_Info_page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -20,6 +20,5 @@ public class Beneficiary_Info_page {
 	public void clickOnNextBtn() {
 		nextBtn.click();
 	}
-	
 
 }

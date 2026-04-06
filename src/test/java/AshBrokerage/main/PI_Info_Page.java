@@ -33,6 +33,10 @@ public class PI_Info_Page {
 		@FindBy(xpath = "(//input[@class='mud-input-slot mud-input-root mud-input-root-text'])[9]")
 		private WebElement driverLicenseNumber;
 		
+		
+		@FindBy(xpath = "//span[text()='Next']")  //Ameritas Journey
+		private WebElement nextBtn;
+		
 		public void PIisNotOwnerRadioBtn() {
 			PIisNotOwnerRadioBtn.click();
 		}
@@ -52,8 +56,16 @@ public class PI_Info_Page {
 		
 		public void driverLicenseNumber_txt()  {
 			
-		
 	
 }
+		public void nextBtn() {
+			nextBtn.click();
+		}
+		
+		public void PIInfoNexBtn() {
+			nextBtn.click();
+		
+		}
+		
 		
 }
