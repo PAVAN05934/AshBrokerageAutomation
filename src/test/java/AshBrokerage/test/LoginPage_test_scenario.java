@@ -1,6 +1,8 @@
 package AshBrokerage.test;
 
 import org.testng.annotations.Test;
+
+import AshBrokerage.commonfile.ClintCreationUptoQuoteResultPage;
 import AshBrokerage.core.Base;
 import AshBrokerage.main.ClientPage;
 import AshBrokerage.main.Dashboard;
@@ -46,13 +48,14 @@ public class LoginPage_test_scenario extends Base {
 		userInf.insuranceLicenseInfoSection();
 		userInf.addIcon();
 		userInf.newStateAdd();
-		userInf.contactSection();
-		userInf.carrierAdd_Btn();
-		userInf.carrierDrpDown();
+	//	userInf.contactSection();
+	//	userInf.carrierAdd_Btn();
+	//	userInf.carrierDrpDown();
 	}
 
 	@Test
 	public void InforcePolicies() throws InterruptedException {
+		
 		InForce_Policies inp = new InForce_Policies(driver);
 		inp.clickOnInForcePolicies();
 		inp.clickonViewBtn();
@@ -64,7 +67,7 @@ public class LoginPage_test_scenario extends Base {
 		Quote_Resume_Rerun qrr = new Quote_Resume_Rerun(driver);
 		qrr.clickonQuoteAndApply();
 		qrr.clickonSearchBox();
-		qrr.clickonResumeBtn();
+		qrr.clickOnRerunBtn();
 	}
 
 	@Test
@@ -105,7 +108,7 @@ public class LoginPage_test_scenario extends Base {
 		client.clickSaveAfterEdit();
 
 		Thread.sleep(3000);
-
+		
 	}
 
 	// Delete Client Information Test
@@ -114,7 +117,7 @@ public class LoginPage_test_scenario extends Base {
 	public void DeleteClient() throws InterruptedException {
 
 		Dashboard dash = new Dashboard(driver);
-		dash.regularMode();
+	//	dash.regularMode();
 		dash.Client_btn();
 		ClientPage client = new ClientPage(driver);
 
@@ -132,12 +135,12 @@ public class LoginPage_test_scenario extends Base {
 		ViewCasePage viewCasePage = new ViewCasePage(driver);
 
 		viewCasePage.clickCasesButton();
-		viewCasePage.searchCase("Asia Valiant");
-		Thread.sleep(5000);
+		viewCasePage.searchCase("Final Test Stage");
+		Thread.sleep(7000);
 		viewCasePage.clickViewCaseButton();
 		// viewCasePage.clickOpenEappButton();
-		Thread.sleep(5000);
-		viewCasePage.clickCompletedCarrierAppLink();
+		//Thread.sleep(5000);
+		//viewCasePage.clickCompletedCarrierAppLink();
 
 	}
 }

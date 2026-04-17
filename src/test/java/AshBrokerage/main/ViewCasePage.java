@@ -80,7 +80,8 @@ public class ViewCasePage {
 
     public void clickViewCaseButton() {
         waitForViewCaseButton();
-        viewCaseButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(viewCaseButton)).click();
     }
     
 

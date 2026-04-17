@@ -36,7 +36,7 @@ public class ClientPage {
 	@FindBy(xpath="//*[@id=\"page-content\"]/div/div[3]/div[2]/div[2]/div/div/div/div[2]/div[2]/div[2]/div[1]/div/div[2]/div[1]")
 	public WebElement malegender;  //gender selection
 	
-	@FindBy(xpath="	//button[@class='btn btn-sm btn-primary rounded-md shadow-lg w-[85px] btn-next']")
+	@FindBy(xpath="//button[@class='btn btn-sm btn-primary rounded-md shadow-lg w-[85px] btn-next']")
 	public WebElement save_btn;    //clicked on save button
 	
 	@FindBy(xpath="//button[contains(text(),'Term')]")  //staging
@@ -49,7 +49,9 @@ public class ClientPage {
 	@FindBy(xpath="//button[text()='Quote / Apply']")
 	private WebElement Quote_ApplyBtn;
 	
-	//Edit Client Information
+	public void clickOnQuoteApplyBtn() {
+		Quote_ApplyBtn.click();
+	}
 	
 	@FindBy(xpath="(//button[contains(text(),'View')])[1]")
 	private WebElement View_Client_btn;

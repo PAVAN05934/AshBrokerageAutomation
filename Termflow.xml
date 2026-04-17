@@ -3,7 +3,18 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="AshBrokerage.test.Term_testcases"/>
+      <class name="AshBrokerage.test.Term_testcases">
+      <methods>
+                    <include name="TermFlow"/>
+                       <include name="termEditBtn"/>
+                    <include name="feFlow"/>
+                    <include name="feEditBtn" />
+                    <include name="iulSelection"/>
+                    <include name="iulEditBtn"/>
+                    <include name="otherProduct"/>
+                    
+                </methods>
+                </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

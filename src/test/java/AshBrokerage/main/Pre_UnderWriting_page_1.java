@@ -107,7 +107,8 @@ public class Pre_UnderWriting_page_1 {
 
 	}
 
-	public void chronicCondition() {
+	public void chronicCondition() throws InterruptedException {
+		Thread.sleep(5000);
 		ChronicCondition.click();
 	}
 }

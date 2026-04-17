@@ -68,4 +68,13 @@ public class PI_Info_Page {
 		}
 		
 		
+		//Pacific Life Promise Term Journey
+		@FindBy(xpath="(//input[@class='mud-radio-input'])[3]")
+		private WebElement USArmedForcesYesRadioBtn;
+		
+		public void USArmedForcesYesRadioBtn() {
+			USArmedForcesYesRadioBtn.click();
+		}
+		
+		
 }

@@ -18,7 +18,7 @@ public class ProductTypePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//input[@class='radio checked:radio-primary radio-sm']")
+	@FindBy(xpath="//span[text()='New Quote']")
 	private WebElement term_btn;
 	
 	@FindBy(xpath="//input[@class='svelte-17l1npl']")
@@ -44,8 +44,9 @@ public class ProductTypePage {
 	    wait.until(ExpectedConditions.elementToBeClickable(term_btn)).click();
 	}
 	
-	public void stateSelection() {
+	public void stateSelection() throws InterruptedException {
 		State_Dropdown.click();
+		Thread.sleep(2000);
 		stateSelect.click();
 	}
 	
@@ -53,7 +54,10 @@ public class ProductTypePage {
 		faceAmount.sendKeys("500000");
 	}
 	
-	public void FEfaceAmountEnter() {
+	public void FEfaceAmountEnter() throws InterruptedException {
+		Thread.sleep(2000);
+		faceAmount.clear();
+		Thread.sleep(2000);
 		faceAmount.sendKeys("50000");
 	}
 	
@@ -71,5 +75,32 @@ public class ProductTypePage {
 	
 	
 	
-
+	@FindBy(xpath="//button[text()='IUL']")
+	private WebElement iul_btn;
+	
+	public void iulBtn() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(iul_btn)).click();
+	}
+	
+	
+	@FindBy(xpath="//button[text()='QUICK QUOTE']")
+	private WebElement quickQuoteBtn;
+	
+	
+	public void clickOnQuickQuoteBtn() throws InterruptedException {
+		Thread.sleep(2000);
+		quickQuoteBtn.click();
+	}
+	
+	
+	@FindBy(xpath="//button[text()='Other Products']")
+	private WebElement otherProductsBtn;
+	
+	public void clickOnOtherProductsBtn() throws InterruptedException {
+		Thread.sleep(2000);
+		otherProductsBtn.click();
+	}
 }
+
+   

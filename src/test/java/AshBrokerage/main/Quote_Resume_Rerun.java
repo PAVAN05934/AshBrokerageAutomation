@@ -5,11 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Quote_Resume_Rerun {public WebDriver driver;
+import AshBrokerage.commonfile.Waits;
+
+public class Quote_Resume_Rerun {
+	public WebDriver driver;
+	public Waits waits;
 
 	public Quote_Resume_Rerun(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);	
+		waits = new Waits(driver);
 	}
 	// ---Resume Elements---
 	
@@ -43,13 +48,11 @@ public class Quote_Resume_Rerun {public WebDriver driver;
 		}
 	public Quote_Resume_Rerun clickonSearchBox() throws InterruptedException {
 		Thread.sleep(3000);
-		SearchBox.sendKeys("Niklas Roupe");
+		SearchBox.sendKeys("UpdatedFname UpdatedLname");
 		return this;
 		}
-	public Quote_Resume_Rerun clickonResumeBtn() throws InterruptedException {
-		Thread.sleep(3000);
-		ResumeBtn.click();
-		return this;	
+	public void Quote_Resume_Rerun(){ 
+		waits.clickWhenReady(ResumeBtn);
 	}
 	
 	// ---Rerun Methods---

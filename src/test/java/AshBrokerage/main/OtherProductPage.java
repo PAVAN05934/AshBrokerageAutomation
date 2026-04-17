@@ -27,6 +27,9 @@ public class OtherProductPage {
     
     @FindBy(xpath = "//button[text()='Other Products']")
     private WebElement otherProductsBtn;
+    
+    @FindBy(xpath = "//div[text()='Disability']")
+    private WebElement disabilityOption;
 
     public void clickOtherProducts() {
         wait.until(ExpectedConditions.elementToBeClickable(otherProductsBtn)).click();
@@ -53,7 +56,37 @@ public class OtherProductPage {
 
     @FindBy(xpath = "//input[@placeholder='Premium']")
     private WebElement premiumInput;
+    
+    @FindBy(xpath="//div[@class='item first hover svelte-3e0qet']")
+    private WebElement montlySelection;
+    
+    
+    public void productTypeSelect() throws InterruptedException {
+    	productTypeInput.click();
+    	Thread.sleep(1000);
+    	disabilityOption.click();
+    }
+    
+    
+    
+    public void carrierNameEnter() {
+    	carrierNameInput.sendKeys("ABC Inurance");
+    }
+    
+    public void productNameEnter() {
+		productNameInput.sendKeys("Super Term 20");
+	}
 
+    public void premiumEnter() {
+    	premiumInput.sendKeys("2500");
+    }
+    
+    public void premiumModeSelect() {
+		premiumModeInput.click();
+		montlySelection.click();
+		monthlyBenefitInput.sendKeys("6500");
+	}
+    
     // ================== Premium Mode ==================
 
     @FindBy(xpath = "//input[@placeholder='Premium Mode']")

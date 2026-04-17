@@ -3,13 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="AshBrokerage.test.LoginPage_test_scenario">
-    <methods>
-        <include name="EditClient"/>
-        <include name="InforcePolicies"/>
-      
-      </methods>
-      </class>
+      <class name="AshBrokerage.test.PacificLife_PromiseTerm_journey"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

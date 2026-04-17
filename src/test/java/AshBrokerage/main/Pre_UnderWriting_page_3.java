@@ -62,5 +62,12 @@ public class Pre_UnderWriting_page_3 {
 	}
 	
 	
+	
+	@FindBy(xpath = "//button[@id='quoter_action_button_next']")
+	private WebElement NextBtn;
+	
+	public void NextBtn() {
+		NextBtn.click();
+	}
 
 }
