@@ -79,9 +79,27 @@ public class ProposedInsuredInfo_Second {
 		NextBtn.click();
 	}
 	
+	//Pacific Life Promise Term Journey
+	@FindBy(xpath = "//input[@class='mud-radio-input']")
+	private WebElement comboforLifeDesability;
 	
+	@FindBy(xpath = "(//input[@class='mud-radio-input'])[3]")
+	private WebElement examRequiredYesRadioBtn;
 	
+	@FindBy(xpath = "(//input[@class='mud-radio-input'])[5]")
+	private WebElement lifeInsuranceYesRadioBtn;
 	
+	public void yes_ComboForLifeDesability() {
+		comboforLifeDesability.click();
+	}
+	
+	public void yes_examRequiredYesRadioBtn() {
+		examRequiredYesRadioBtn.click();
+	}
+	
+	public void yes_lifeInsuranceYesRadioBtn() {
+		lifeInsuranceYesRadioBtn.click();
+	}
 	
 	
 	

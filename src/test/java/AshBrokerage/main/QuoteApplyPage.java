@@ -71,7 +71,8 @@ public class QuoteApplyPage {
     // ACTION METHODS
     // =======================
 
-    public void selectFinalExpense() {
+    public void selectFinalExpense() throws InterruptedException {
+    	Thread.sleep(5000);
         finalExpenseBtn.click();
         startNewQuoteRadio.click();
       

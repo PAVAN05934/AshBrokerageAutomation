@@ -30,4 +30,18 @@ public class KnockOutPage {
 	}
 
 	
+	//Paclific Life Promise Term Journey
+	@FindBy(xpath="(//input[@name='carrierKnockout'])[2]")
+	private WebElement conditionApply;
+	
+	public void ConditionApply() {
+		conditionApply.click();
+	}
+	
+	@FindBy(xpath="//input[@name='carrierKnockout']")
+	private WebElement criteriaMet;
+	
+	public void YescriteriaMet() {
+		criteriaMet.click();
+	}
 }

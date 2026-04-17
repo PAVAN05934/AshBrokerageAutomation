@@ -35,7 +35,9 @@ public class ClintCreationUptoQuoteResultPage {
 		clientpa.lastName();
 		clientpa.DOB();
 		clientpa.genderSelection();
+		Thread.sleep(5000);
 		clientpa.savebtn();
+		Thread.sleep(5000);
 		clientpa.quoteApplyBtn();
 		
 		ProductTypePage product = new ProductTypePage(driver);
@@ -102,5 +104,9 @@ public class ClintCreationUptoQuoteResultPage {
 		preUnderWri2.completePreUnderwritingPage2();
 		
 	}
+	
+	
+	
+	
 
 }

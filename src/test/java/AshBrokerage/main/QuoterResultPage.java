@@ -34,6 +34,11 @@ public class QuoterResultPage {
 	@FindBy(xpath="//div[@role='button']/child::input[@name='quoteSelected']")
 	private WebElement selectAmericoEagleSelect;
 	
+	@FindBy(xpath="(//button[text()='Apply'])[8]")
+	private WebElement applyBtnforPaclificLifePromiseTermJourney;
+	
+	@FindBy(xpath="(//div[starts-with(@class,'w-full text-')]/label)[3]")
+	private WebElement quoteDetailseditBtn;
 	
 	public void applyBtn_ameritasJourney() {
 		applyBtnforAmeritasJourney.click();
@@ -43,5 +48,22 @@ public class QuoterResultPage {
 		applyBtnforPrincipalJourney.click();
 	}
 
+	public void applyBtn_PacificLifePromiseTermJourney() {
+		applyBtnforPaclificLifePromiseTermJourney.click();
+	}
 	
+	public void quoteDetailsEditButton() throws InterruptedException {
+		    
+		  Thread.sleep(10000);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+
+		    wait.until(ExpectedConditions.elementToBeClickable(quoteDetailseditBtn));
+		    quoteDetailseditBtn.click();
+	}
+	
+	public void editIUL() throws InterruptedException {
+		 Thread.sleep(40000);
+		 quoteDetailseditBtn.click();
+	}
+
 }
